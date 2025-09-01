@@ -39,31 +39,31 @@ A full-stack application for browsing movies, selecting seats, and booking ticke
 - N-Tier structure (Presentation, Application, Domain, Infrastructure)  
 
 ---
-
 ## 📂 Project Structure
 
 movie-ticket-booking/
-├── frontend/ (Angular App)
-│ └── src/app/
-│ ├── components/
-│ ├── services/
-│ └── app-routing.module.ts
+├── frontend/                               (Angular App)
+│   └── src/app/
+│       ├── components/
+│       ├── services/
+│       └── app-routing.module.ts
 │
-├── backend/ (ASP.NET Core Web API, N-Tier)
-│ ├── MovieBooking.sln
-│ │
-│ ├── MovieBooking.Presentation/ ← API Layer (Controllers, Startup)
-│ │ ├── Controllers/
-│ │ └── Program.cs
-│ │
-│ ├── MovieBooking.Application/ ← Business Logic Layer
-│ │ └── Services/
-│ │
-│ ├── MovieBooking.Domain/ ← Domain Layer
-│ │ ├── Entities/
-│ │ └── Interfaces/
-│ │
-│ └── MovieBooking.Infrastructure/ ← Data Access Layer
-│ ├── Context/
-│ ├── Repositories/
-│ └── Migrations
+├── backend/                                (ASP.NET Core Web API, N-Tier)
+│   ├── MovieBooking.sln
+│   │
+│   ├── MovieBooking.Presentation/          ← API Layer (Controllers, Startup)
+│   │   ├── Controllers/
+│   │   └── Program.cs
+│   │
+│   ├── MovieBooking.Application/           ← Business Logic Layer
+│   │   └── Services/
+│   │
+│   ├── MovieBooking.Domain/                ← Domain Layer
+│   │   ├── Entities/
+│   │   └── Interfaces/
+│   │
+│   └── MovieBooking.Infrastructure/        ← Data Access Layer
+│       ├── Context/
+│       ├── Repositories/
+│       └── Migrations/
+
