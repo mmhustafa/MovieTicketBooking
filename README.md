@@ -41,6 +41,7 @@ A full-stack application for browsing movies, selecting seats, and booking ticke
 ---
 ## 📂 Project Structure
 
+```plaintext
 movie-ticket-booking/
 ├── frontend/                               (Angular App)
 │   └── src/app/
