@@ -1,0 +1,255 @@
+body {
+  background-color: #18191C; /* same as your home-container */
+  margin: 0;
+  padding: 0;
+}
+.home-container {
+  font-family: 'Poppins', sans-serif;
+  background-color: #18191C; 
+  padding: 0;
+  color: #FFFFFF; 
+}
+
+
+.slider-img {
+  height: 600px; 
+  object-fit: cover;
+}
+
+.carousel-caption {
+  position: absolute; 
+  z-index: 10; 
+  background: transparent;
+  padding: 1rem 1.5rem;
+  left: 5%;
+  bottom: 10%;
+  max-width: 45%;
+}
+
+.btn-slider {
+  position: relative; 
+  z-index: 11; 
+  border: 1px solid #8D51CE;
+  color: #8D51CE;
+  background-color: transparent;
+  border-radius: 25px;
+  padding: 0.5rem 1.2rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-slider:hover {
+  background-color: #8D51CE;
+  color: #FFFFFF;
+  transform: scale(1.05);
+}
+
+.carousel-caption h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #FFFFFF; 
+}
+
+.carousel-caption p {
+  font-size: 1rem;
+  color: #ADB1BB; 
+  margin-bottom: 1rem;
+}
+
+
+
+.now-showing-section {
+  margin: 3rem auto;
+  padding: 0 2rem;
+  max-width: 1200px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.section-header h3 {
+  color: #FFFFFF; 
+  font-size: 1.8rem;
+}
+
+.view-all {
+  color: #8D51CE; 
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.view-all:hover {
+  color: #5A1094; 
+}
+
+.movie-cards {
+  display: flex;
+  gap: 2rem; 
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.movie-card {
+  position: relative;
+  width: 220px; 
+  height: 330px; 
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  margin-bottom: 2rem; 
+}
+.movie-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Overlay on hover */
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(24,25,28,0.8);
+  color: #FFFFFF;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  transition: opacity 0.3s ease;
+}
+
+.movie-card:hover .card-overlay {
+  opacity: 1;
+}
+
+.card-overlay h5 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #FFFFFF; /* White title */
+}
+
+.card-overlay p {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  color: #ADB1BB; /* Gray text */
+}
+
+/* Card Button same as slider button */
+.card-overlay .btn-slider {
+  border: 1px solid #8D51CE;
+  color: #8D51CE;
+  background-color: transparent;
+  border-radius: 25px;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.card-overlay .btn-slider:hover {
+  background-color: #8D51CE;
+  color: #FFFFFF;
+  transform: scale(1.05);
+}
+/* Coming Soon Section */
+.coming-soon-section {
+  margin: 3rem auto 0 auto;
+  padding: 2rem 2rem;
+  max-width: 1200px;
+}
+
+.coming-soon-section h3 {
+  color: #FFFFFF;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.coming-soon-cards {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.coming-soon-card {
+  position: relative;
+  width: 220px;
+  height: 330px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: default;
+}
+
+.coming-soon-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  filter: grayscale(40%) brightness(0.8);
+  transition: filter 0.3s ease;
+}
+
+.coming-soon-card:hover img {
+  filter: grayscale(0%) brightness(1);
+}
+
+/* Overlay */
+.coming-soon-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(24,25,28,0.8);
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.coming-soon-card:hover .coming-soon-overlay {
+  opacity: 1;
+}
+
+.coming-soon-overlay h5 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.coming-soon-overlay p {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  color: #ADB1BB;
+}
+
+/* Tag Badge */
+.coming-tag {
+  background: #8D51CE;
+  color: #FFFFFF;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+

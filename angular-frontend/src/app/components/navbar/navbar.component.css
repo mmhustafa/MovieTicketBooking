@@ -1,0 +1,67 @@
+
+.navbar, .navbar-brand, .nav-link, .btn-purple, .btn-outline-purple {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.bg-deep-purple {
+  background-color: #18191C !important; 
+}
+
+
+.text-deep-purple {
+  color: #FFFFFF; 
+  font-weight: bold;
+}
+
+
+.nav-link {
+  position: relative;
+  color: #FFFFFF !important; 
+  margin: 0 10px;
+  transition: all 0.3s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  background-color: #8D51CE; 
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  transform: translateY(-3px);
+  color: #8D51CE !important; 
+}
+
+
+.btn-purple {
+  background-color: #8D51CE; 
+  color: #FFFFFF;
+  border: none;
+  transition: 0.3s;
+}
+
+.btn-purple:hover {
+  background-color: #5A1094; 
+}
+
+.btn-outline-purple {
+  border: 1px solid #8D51CE;
+  color: #8D51CE;
+  background-color: transparent;
+  transition: 0.3s;
+}
+
+.btn-outline-purple:hover {
+  background-color: #8D51CE;
+  color: #FFFFFF;
+}

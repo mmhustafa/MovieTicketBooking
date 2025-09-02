@@ -1,0 +1,66 @@
+<div class="home-container">
+
+  <!-- Hero Slider using Bootstrap Carousel -->
+  <div id="nowShowingCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div *ngFor="let movie of nowShowing; let i = index" class="carousel-item" [class.active]="i === 0">
+        <img [src]="movie.posterUrl" class="d-block w-100 slider-img" alt="{{movie.title}}">
+        <div class="carousel-caption d-md-block text-start">
+          <h2>{{ movie.title }}</h2>
+          <p>{{ movie.duration }} . {{ movie.genre }} . {{ movie.year }}</p>
+          <button class="btn btn-slider">Get Ticket</button>
+        </div>
+      </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#nowShowingCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#nowShowingCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <!-- Now Showing Cards -->
+  <div class="now-showing-section">
+    <div class="section-header">
+      <h3>Now Showing</h3>
+      <a class="view-all" href="#">View All →</a>
+    </div>
+
+    <div class="movie-cards">
+      <div *ngFor="let movie of nowShowing" class="movie-card">
+        <img [src]="movie.posterUrl" alt="{{movie.title}}" class="card-img">
+        <div class="card-overlay">
+          <h5>{{ movie.title }}</h5>
+          <p>{{ movie.duration }} . {{ movie.genre }} . {{ movie.year }}</p>
+          <button class="btn btn-slider">Get Ticket</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Coming Soon Section -->
+<div class="coming-soon-section">
+  <div class="section-header">
+    <h3> Coming Soon</h3>
+  </div>
+
+  <div class="coming-soon-cards">
+    <div *ngFor="let movie of comingSoon" class="coming-soon-card">
+      <img [src]="movie.posterUrl" alt="{{movie.title}}" class="card-img">
+      <div class="coming-soon-overlay">
+        <h5>{{ movie.title }}</h5>
+        <p>{{ movie.duration }} . {{ movie.genre }}</p>
+        <p>Stay Tuned</p>
+        <span class="coming-tag">Coming Soon</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>

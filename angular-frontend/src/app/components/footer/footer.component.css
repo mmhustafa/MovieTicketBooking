@@ -1,0 +1,48 @@
+footer {
+  background-color: #1F2023; /* Darkest Gray */
+  font-family: 'Poppins', sans-serif;
+  color: #83858A; /* Medium-Light Gray */
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  margin-top: 0 !important;
+}
+
+.cinema-description {
+  text-align: center;
+  margin: 30px 0;
+  font-size: 1.1rem;
+  color: #ADB1BB; /* Light Gray text */
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Social icons */
+.footer-social a {
+  color: #CDB5E2; /* Light Purple */
+  font-size: 1.5rem;
+  margin-right: 10px;
+  transition: color 0.3s ease;
+}
+
+.footer-social a:hover .bi-facebook,
+.footer-social a:hover .bi-instagram {
+  color: #8D51CE; /* Medium Purple hover */
+}
+
+/* Footer headings */
+footer h5 {
+  color: #CDB5E2; /* Light Purple headings */
+  margin-bottom: 1rem;
+}
+
+/* Footer separator */
+footer hr {
+  border-color: #5A5C63; /* Medium Gray */
+}
+
+/* Footer small text */
+footer small {
+  color: #83858A; /* Medium-Light Gray */
+}
