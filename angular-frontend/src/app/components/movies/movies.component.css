@@ -1,0 +1,149 @@
+/* Body + Container */
+body {
+  background-color: #18191C; /* dark theme */
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #FFFFFF;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #18191C;
+}
+
+/* Search Box */
+.search-box {
+  display: flex;
+  justify-content: center;
+}
+.search-box input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 15px;
+  border-radius: 25px;
+  border: 1px solid #8D51CE;
+  background-color: transparent;
+  color: #FFFFFF;
+  outline: none;
+  transition: all 0.3s;
+}
+.search-box input::placeholder {
+  color: #ADB1BB;
+}
+.search-box input:focus {
+  border-color: #5A1094;
+  box-shadow: 0 0 8px rgba(141, 81, 206, 0.6);
+}
+
+/* Movies Grid */
+.movie-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+/* Movie Card */
+.movie-card {
+  position: relative;
+  width: 220px;
+  height: 330px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.movie-card:hover {
+  transform: translateY(-5px);
+}
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Overlay */
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(24,25,28,0.8);
+  color: #FFFFFF;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  transition: opacity 0.3s ease;
+}
+.movie-card:hover .card-overlay {
+  opacity: 1;
+}
+
+.card-overlay h5 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #FFFFFF;
+}
+.card-overlay p {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  color: #ADB1BB;
+}
+.card-overlay .btn-slider {
+  border: 1px solid #8D51CE;
+  color: #8D51CE;
+  background-color: transparent;
+  border-radius: 25px;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+}
+.card-overlay .btn-slider:hover {
+  background-color: #8D51CE;
+  color: #FFFFFF;
+  transform: scale(1.05);
+}
+
+/* Coming Tag */
+.coming-tag {
+  background: #8D51CE;
+  color: #FFFFFF;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Pagination */
+.pagination-controls {
+  text-align: center;
+}
+.pagination-controls button {
+  background: transparent;
+  border: 1px solid #8D51CE;
+  color: #8D51CE;
+  border-radius: 50%;
+  margin: 0 5px;
+  width: 35px;
+  height: 35px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.pagination-controls button.active,
+.pagination-controls button:hover {
+  background: #8D51CE;
+  color: #FFFFFF;
+}
+.pagination-controls button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

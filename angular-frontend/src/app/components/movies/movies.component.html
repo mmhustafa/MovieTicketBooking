@@ -1,0 +1,55 @@
+<div class="container py-5">
+  <h3 class="mb-4 text-center text-light ">Movies</h3>
+
+  <div class="search-box mb-4">
+    <input
+      type="text"
+      [(ngModel)]="searchTerm"
+      (input)="applyFilters()"
+      placeholder="Search movies..."
+    />
+  </div>
+  
+  <div class="movie-cards" *ngIf="pagedMovies.length > 0; else noMovies">
+    @for (movie of pagedMovies; track movie.id) {
+      <div class="movie-card">
+        <img [src]="movie.posterUrl" alt="{{ movie.title }}" class="card-img" />
+      
+        <div class="card-overlay">
+          <h5>{{ movie.title }}</h5>
+          <p>{{ movie.duration }} • {{ movie.genre }} • {{ movie.year }}</p>
+      
+          @if (movie.status === 'NowShowing') {
+            <button class="btn btn-slider">Get Ticket</button>
+          } @else {
+            <p class="fw-bold">Stay Tuned</p>
+            <span class="coming-tag">Coming Soon</span>
+          }
+        </div>
+      </div>
+    }
+  </div>
+
+  <ng-template #noMovies>
+    <p class="text-center text-light mt-5">No movies found </p>
+  </ng-template>
+
+  <div class="pagination-controls mt-4">
+    <button (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1">
+      ‹
+    </button>
+
+    <span *ngFor="let p of [].constructor(totalPages); let i = index">
+      <button
+        [class.active]="currentPage === i + 1"
+        (click)="changePage(i + 1)"
+      >
+        {{ i + 1 }}
+      </button>
+    </span>
+
+    <button (click)="changePage(currentPage + 1)" [disabled]="currentPage === totalPages">
+      ›
+    </button>
+  </div>
+</div>
