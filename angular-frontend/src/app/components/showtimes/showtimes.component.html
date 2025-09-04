@@ -1,1 +1,42 @@
-<p>showtimes works!</p>
+<div class="container py-4">
+  <h2 class="text-light mb-4 text-center">Showtimes</h2>
+
+  <div class="select-group">
+
+    <div class="select-wrapper">
+      <label class="text-light me-2">Theatre:</label>
+      <select [(ngModel)]="selectedTheatre" (change)="loadShowtimes()">
+        <option *ngFor="let t of theatres" [value]="t">{{ t }}</option>
+      </select>
+    </div>
+
+    <div class="select-wrapper">
+      <label class="text-light me-2">Date:</label>
+      <select [(ngModel)]="selectedDate" (change)="loadShowtimes()">
+        <option *ngFor="let d of dates" [value]="d">{{ d }}</option>
+      </select>
+    </div>
+
+  </div>
+
+  <div *ngFor="let s of showtimes" class="showtime-card">
+    <div *ngIf="getMovie(s.movieId) as movie" class="d-flex align-items-center">
+      <img [src]="movie.posterUrl" alt="{{ movie.title }}" width="100" height="150" class="me-3">
+      <div class="showtime-info">
+        <h4 class="text-light">{{ movie.title }}</h4>
+        <p>{{ movie.genre }} • {{ movie.duration }} • {{ movie.year }}</p>
+      </div>
+    </div>
+
+    <div class="showtime-times mt-3">
+      <button class="btn btn-outline-info me-2 mb-2" *ngFor="let time of s.times">
+        {{ time }}
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="showtimes.length === 0" class="no-showtimes">
+    No movies available for the selected theatre and date.
+  </div>
+
+</div>
