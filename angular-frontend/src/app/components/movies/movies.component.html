@@ -1,6 +1,12 @@
 <div class="container py-5">
   <h3 class="mb-4 text-center text-light ">Movies</h3>
-
+  <div class="filter-box mb-3 text-center">
+    <select id="statusFilter" [(ngModel)]="statusFilter" (change)="applyFilters()">
+      <option value="All">All</option>
+      <option value="NowShowing">Now Showing</option>
+      <option value="ComingSoon">Coming Soon</option>
+    </select>
+  </div>
   <div class="search-box mb-4">
     <input
       type="text"
@@ -9,25 +15,25 @@
       placeholder="Search movies..."
     />
   </div>
-  
+
   <div class="movie-cards" *ngIf="pagedMovies.length > 0; else noMovies">
-    @for (movie of pagedMovies; track movie.id) {
-      <div class="movie-card">
-        <img [src]="movie.posterUrl" alt="{{ movie.title }}" class="card-img" />
-      
-        <div class="card-overlay">
-          <h5>{{ movie.title }}</h5>
-          <p>{{ movie.duration }} | {{ movie.genre }} | {{ movie.year }}</p>
-      
-          @if (movie.status === 'NowShowing') {
-            <button class="btn btn-slider">Get Ticket</button>
-          } @else {
-            <p class="fw-bold">Stay Tuned</p>
-            <span class="coming-tag">Coming Soon</span>
-          }
+    <div *ngFor="let movie of pagedMovies; trackBy: trackByMovieId" class="movie-card">
+      <img [src]="movie.posterUrl" alt="{{ movie.title }}" class="card-img" />
+      <span class="status-badge" [ngClass]="movie.status === 'NowShowing' ? 'now' : 'coming'">
+        {{ movie.status === 'NowShowing' ? 'Now Showing' : 'Coming Soon' }}
+      </span>
+      <div class="card-overlay">
+        <h5>{{ movie.title }}</h5>
+        <p>{{ movie.duration }} | {{ movie.genre }} | {{ movie.year }}</p>
+
+        <button *ngIf="movie.status === 'NowShowing'" class="btn btn-slider" [routerLink]="['/movies', movie.id]">
+          Get Ticket
+        </button>
+        <div *ngIf="movie.status !== 'NowShowing'" class="stay-tuned">
+          Stay Tuned
         </div>
       </div>
-    }
+    </div>
   </div>
 
   <ng-template #noMovies>

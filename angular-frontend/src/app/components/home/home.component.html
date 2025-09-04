@@ -38,7 +38,7 @@
         <div class="card-overlay">
           <h5>{{ movie.title }}</h5>
           <p>{{ movie.duration }} | {{ movie.genre }} | {{ movie.year }}</p>
-          <button class="btn btn-slider" [routerLink]="['movies',movie.id]">Get Ticket</button>
+          <button class="btn btn-slider" [routerLink]="['movies', movie.id]">Get Ticket</button>
         </div>
       </div>
     </div>
@@ -48,6 +48,7 @@
 <div class="coming-soon-section">
   <div class="section-header">
     <h3> Coming Soon</h3>
+    <a class="view-all" routerLink="/movies">View All →</a>
   </div>
 
   <div class="coming-soon-cards">

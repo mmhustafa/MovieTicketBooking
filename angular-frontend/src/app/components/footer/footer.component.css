@@ -38,15 +38,18 @@ footer {
 
 /* Social icons */
 .footer-social a {
-  color: #CDB5E2; /* Light Purple */
+  color: white; /* Light Purple */
   font-size: 1.5rem;
   margin-right: 10px;
   transition: color 0.3s ease;
 }
 
-.footer-social a:hover .bi-facebook,
+.footer-social a:hover .bi-facebook {
+  color: #1877F2; /* Facebook Blue */
+}
+
 .footer-social a:hover .bi-instagram {
-  color: #8D51CE; /* Medium Purple hover */
+  color: #C13584; /* Instagram Gradient Pink/Purple */
 }
 
 /* Footer headings */

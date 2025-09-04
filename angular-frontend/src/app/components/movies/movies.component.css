@@ -113,14 +113,15 @@ body {
   transform: scale(1.05);
 }
 
-/* Coming Tag */
-.coming-tag {
-  background: #8D51CE;
-  color: #FFFFFF;
-  padding: 4px 12px;
+.stay-tuned {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ece9eef8; 
+  background: rgba(24,25,28,0.8);
+  padding: 6px 14px;
   border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 500;
+  box-shadow: 0 0 8px rgba(249, 249, 250, 0.973);
+  transition: box-shadow 0.3s ease;
 }
 
 /* Pagination */
@@ -147,3 +148,49 @@ body {
   opacity: 0.4;
   cursor: not-allowed;
 }
+/* Filter Box - Match Search Style */
+.filter-box select {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 15px;
+  border-radius: 25px;
+  border: 1px solid #8D51CE;
+  background-color: transparent;
+  color: #FFFFFF;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: center;
+  -webkit-appearance: none;  /* Safari/Chrome */
+  -moz-appearance: none;     /* Firefox */
+  appearance: none;          /* Modern browsers */
+  background-image: none;    /* For some browsers */
+  padding-right: 15px; 
+}
+.filter-box select option {
+  background-color: #18191C;
+  color: #FFFFFF;
+}
+.filter-box select:focus {
+  border-color: #5A1094;
+  box-shadow: 0 0 8px rgba(141, 81, 206, 0.6);
+}
+.status-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.status-badge.now {
+  background-color: #8D51CE; 
+}
+
+.status-badge.coming {
+  background-color: #FF6B6B; 
+}
+
