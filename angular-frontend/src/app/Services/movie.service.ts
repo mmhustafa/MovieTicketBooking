@@ -13,7 +13,9 @@ export class MovieService {
       duration: '2h 15m',
       year: 2023,
       posterUrl: 'https://upload.wikimedia.org/wikipedia/en/e/e0/The_Amazing_Spider-Man_%28film%29_poster.jpg',
-      status:'NowShowing'
+      status:'NowShowing',
+    "overview" : "lorem ahkjhgkjl"
+
     },
     {
       id: 2,
@@ -22,7 +24,9 @@ export class MovieService {
       duration: '3h 1m',
       year: 2019,
       posterUrl: 'https://upload.wikimedia.org/wikipedia/en/e/e0/The_Amazing_Spider-Man_%28film%29_poster.jpg',
-      status:'NowShowing'
+      status:'NowShowing',
+    "overview" : "lorem ahkjhgkjl"
+
     },
     {
       id: 3,
@@ -31,7 +35,9 @@ export class MovieService {
       duration: '2h 28m',
       year: 2010,
       posterUrl: 'https://upload.wikimedia.org/wikipedia/en/e/e0/The_Amazing_Spider-Man_%28film%29_poster.jpg',
-      status:'NowShowing'
+      status:'NowShowing',
+    "overview" : "lorem ahkjhgkjl"
+
 
     },
     {
@@ -41,7 +47,9 @@ export class MovieService {
       duration: '2h 49m',
       year: 2014,
       posterUrl: 'https://upload.wikimedia.org/wikipedia/en/e/e0/The_Amazing_Spider-Man_%28film%29_poster.jpg',
-      status:'NowShowing'
+      status:'NowShowing',
+    "overview" : "lorem ahkjhgkjl"
+
     },
     {
     "id": 8,
@@ -50,7 +58,9 @@ export class MovieService {
     "duration": "2h 49m",
     "year": 2014,
     "posterUrl": "https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg",
-    "status": "ComingSoon"
+    "status": "ComingSoon",
+    "overview" : "lorem ahkjhgkjl"
+
   },
   {
     "id": 5,
@@ -59,7 +69,8 @@ export class MovieService {
     "duration": "2h 28m",
     "year": 2010,
     "posterUrl": "https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg",
-    "status": "ComingSoon"
+    "status": "ComingSoon",
+    "overview" : "lorem ahkjhgkjl"
   },
   {
     "id": 6,
@@ -68,7 +79,8 @@ export class MovieService {
     "duration": "2h 46m",
     "year": 2024,
     "posterUrl": "https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg",
-    "status": "ComingSoon"
+    "status": "ComingSoon",
+    "overview" : "lorem ahkjhgkjl"
   },
   {
     "id": 7,
@@ -77,7 +89,8 @@ export class MovieService {
     "duration": "2h 55m",
     "year": 2025,
     "posterUrl": "https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg",
-    "status": "ComingSoon"
+    "status": "ComingSoon",
+    "overview" : "lorem ahkjhgkjl"
   }
 ]
 
@@ -85,6 +98,9 @@ export class MovieService {
   constructor() { }
   getMovies(): Movie[] {
     return this.movies;
+  }
+  getMovieById(id: number): Movie | undefined {
+  return this.movies.find(m => m.id === id);
   }
 
   getNowShowing(): Movie[] {

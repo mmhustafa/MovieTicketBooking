@@ -1,0 +1,68 @@
+<div class="details-wrapper">
+  <!-- Poster (left) -->
+  <div class="poster">
+    <img [src]="movie?.posterUrl" [alt]="movie?.title || 'Poster'" />
+  </div>
+
+  <!-- Info (right, centered content) -->
+  <div class="info">
+    <h1 class="title">{{ movie?.title }}</h1>
+
+    <div class="meta" *ngIf="movie">
+      <span>{{ movie.genre }}</span>
+      <span>|</span>
+      <span>{{ movie.duration }}</span>
+      <span>|</span>
+      <span>{{ movie.year }}</span>
+      <span class="status" [class.now]="movie.status === 'NowShowing'" [class.soon]="movie.status === 'ComingSoon'">
+        {{ movie.status === 'NowShowing' ? 'Now Showing' : 'Coming Soon' }}
+      </span>
+    </div>
+
+    <p class="storyline" *ngIf="movie?.overview">
+      {{ movie?.overview }}
+    </p>
+
+    <!-- Selectors -->
+    <div class="selectors">
+      <div class="select-wrapper">
+        <label>Select Date</label>
+        <select [(ngModel)]="selectedDate" (change)="onDateChange()" [disabled]="!dates.length">
+          <option *ngFor="let d of dates" [value]="d">{{ d }}</option>
+        </select>
+      </div>
+
+      <div class="select-wrapper">
+        <label>Select Theatre</label>
+        <select [(ngModel)]="selectedTheatre" (change)="onTheatreChange()" [disabled]="!theatres.length">
+          <option *ngFor="let t of theatres" [value]="t">{{ t }}</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Times -->
+    <div class="times" *ngIf="times.length; else noTimes">
+      <h4>Choose Time</h4>
+      <div class="time-buttons">
+        <button
+          *ngFor="let time of times"
+          (click)="chooseTime(time)"
+          [class.selected]="time === selectedTime">
+          {{ time }}
+        </button>
+      </div>
+    </div>
+
+    <ng-template #noTimes>
+      <p class="no-times">No times available for this Movie</p>
+    </ng-template>
+
+    <!-- CTA -->
+    <button
+      class="btn-ticket"
+      [disabled]="!selectedDate || !selectedTheatre || !selectedTime"
+      (click)="goToTickets()">
+      Get Tickets
+    </button>
+  </div>
+</div>

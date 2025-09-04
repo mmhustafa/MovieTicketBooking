@@ -10,7 +10,7 @@ export class ShowtimeService {
       id: 1,
       movieId: 1,
       theatre: 'Hall 1',
-      date: '2025-09-12',
+      date: '2025-09-13',
       times: ['11:30 AM', '03:00 PM', '06:45 PM']
     },
     {
@@ -32,11 +32,21 @@ export class ShowtimeService {
   getShowtimes(): Showtime[] {
     return this.showtimes;
   }
+  getTheatres(): string[] {
+  return [...new Set(this.showtimes.map(s => s.theatre))]; 
+}
 
+getDates(): string[] {
+  return [...new Set(this.showtimes.map(s => s.date))]; 
+}
   getShowtimesByDateAndTheatre(date: string, theatre: string): Showtime[] {
     return this.showtimes.filter(s => s.date === date && s.theatre === theatre);
   }
-
+  getShowtimesByMovieDateAndTheatre(movieId: number, date: string, theatre: string): Showtime[] {
+  return this.showtimes.filter(
+    s => s.movieId === movieId && s.date === date && s.theatre === theatre
+  );
+  }
   getShowtimesByMovie(movieId: number): Showtime[] {
     return this.showtimes.filter(s => s.movieId === movieId);
   }

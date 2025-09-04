@@ -5,5 +5,6 @@ export interface Movie {
   duration: string;
   year: number;
   posterUrl: string;
+  overview :string;
   status: 'NowShowing' | 'ComingSoon';
 }

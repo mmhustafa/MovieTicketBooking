@@ -110,11 +110,19 @@ h2 {
   transition: all 0.2s ease;
 }
 
+/* Hover on not-selected */
 .showtime-times button:hover {
   background-color: #9D4EDD;
   border-color: #9D4EDD;
   color: #fff;
   transform: scale(1.05);
+}
+
+/* Selected button */
+.showtime-times button.selected {
+  background-color: #9D4EDD;
+  border-color: #9D4EDD;
+  color: #fff;
 }
 
 .no-showtimes {
@@ -124,3 +132,29 @@ h2 {
   text-align: center;
   font-style: bold;
 }
+.get-tickets-btn {
+  border-radius: 25px;
+  font-size: 1rem;
+  padding: 10px 20px;
+  background-color: #9D4EDD;
+  border: 2px solid #9D4EDD;
+  color: #fff;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.get-tickets-btn:hover {
+  background-color: transparent;
+  color: #EAEAEA;
+  border-color: #9D4EDD;
+  transform: scale(1.05);
+}
+.get-tickets-btn:disabled {
+  background-color: #444;   
+  border-color: #444;
+  color: #888;
+  cursor: not-allowed;
+  transform: none; 
+}
+
+

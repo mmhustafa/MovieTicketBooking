@@ -14,11 +14,12 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './showtimes.component.css'
 })
 export class ShowtimesComponent implements OnInit {
-  theatres: string[] = ['Hall 1', 'Hall 2', 'Hall 3'];
+  theatres: string[] = this.showtimeservice.getTheatres();
   selectedTheatre: string = this.theatres[0];
 
-  dates: string[] = ['2025-09-12', '2025-09-13', '2025-09-14'];
+  dates: string[] = this.showtimeservice.getDates();
   selectedDate: string = this.dates[0];
+  selectedTimes: { [showtimeId: number]: string } = {};
 
   showtimes: Showtime[] = [];
   movies: Movie[] = [];
@@ -41,4 +42,7 @@ export class ShowtimesComponent implements OnInit {
   getMovie(movieId: number): Movie | undefined {
     return this.movies.find(m => m.id === movieId);
   }
+  selectTime(showtimeId: number, time: string) {
+  this.selectedTimes[showtimeId] = time; 
+}
 }

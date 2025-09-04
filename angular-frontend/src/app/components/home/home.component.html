@@ -7,8 +7,9 @@
         <img [src]="movie.posterUrl" class="d-block w-100 slider-img" alt="{{movie.title}}">
         <div class="carousel-caption d-md-block text-start">
           <h2>{{ movie.title }}</h2>
-          <p>{{ movie.duration }} . {{ movie.genre }} . {{ movie.year }}</p>
-          <button class="btn btn-slider">Get Ticket</button>
+          <p>{{ movie.duration }} | {{ movie.genre }} | {{ movie.year }}</p>
+          <p>{{movie.overview}}</p>
+          <button class="btn btn-slider"[routerLink]="['movies',movie.id]">Get Ticket</button>
         </div>
       </div>
     </div>
@@ -28,7 +29,7 @@
   <div class="now-showing-section">
     <div class="section-header">
       <h3>Now Showing</h3>
-      <a class="view-all" href="#">View All →</a>
+      <a class="view-all" routerLink="/movies">View All →</a>
     </div>
 
     <div class="movie-cards">
@@ -36,8 +37,8 @@
         <img [src]="movie.posterUrl" alt="{{movie.title}}" class="card-img">
         <div class="card-overlay">
           <h5>{{ movie.title }}</h5>
-          <p>{{ movie.duration }} . {{ movie.genre }} . {{ movie.year }}</p>
-          <button class="btn btn-slider">Get Ticket</button>
+          <p>{{ movie.duration }} | {{ movie.genre }} | {{ movie.year }}</p>
+          <button class="btn btn-slider" [routerLink]="['movies',movie.id]">Get Ticket</button>
         </div>
       </div>
     </div>
