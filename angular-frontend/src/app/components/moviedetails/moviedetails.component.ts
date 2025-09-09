@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Showtime } from '../../Interfaces/showtime.model';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MovieService } from '../../Services/movie.service';
 import { ShowtimeService } from '../../Services/showtime.service';
 import { Movie } from '../../Interfaces/movie.model';
@@ -19,16 +19,17 @@ export class MoviedetailsComponent implements OnInit {
   movie!: Movie | undefined;
 
   dates: string[] = [];
-  theatres: string[] = [];
+  halls: string[] = [];
   times: string[] = [];
-  showtimes:Showtime[] =[];
+  showtimes: Showtime[] = [];
 
   selectedDate: string | null = null;
-  selectedTheatre: string | null = null;
+  selectedHall: string | null = null;
   selectedTime: string | null = null;
 
   constructor(
     private route: ActivatedRoute,
+    private router : Router,
     private movieService: MovieService,
     private showtimeService: ShowtimeService
   ) {}
@@ -40,26 +41,29 @@ export class MoviedetailsComponent implements OnInit {
     
     if (this.dates.length) {
       this.selectedDate = this.dates[0];
-      this.updateTheatres();
+      this.updateHalls();
     }
   }
-  updateTheatres(): void {
-  
-    this.theatres = [
-      ...new Set(this.showtimes.filter(s => s.date === this.selectedDate).map(s => s.theatre))
+  updateHalls(): void {
+     this.halls = [
+      ...new Set(
+        this.showtimes
+          .filter(s => s.date === this.selectedDate)
+          .map(s => s.hallId)
+      )
     ];
-    this.selectedTheatre = this.theatres[0] || '';
+    this.selectedHall = this.halls[0] || '';
     this.updateTimes();
   }
 
   updateTimes(): void {
-    if (this.selectedDate && this.selectedTheatre) {
+    if (this.selectedDate && this.selectedHall) {
       const matches = this.showtimeService.getShowtimesByMovieDateAndTheatre(
         this.movieId,
-        this.selectedDate,
-        this.selectedTheatre
+        this.selectedDate!,
+        this.selectedHall!
       );
-      this.times = matches.length ? matches[0].times : [];
+      this.times = matches.map(s => s.time); 
     } else {
       this.times = [];
     }
@@ -67,12 +71,12 @@ export class MoviedetailsComponent implements OnInit {
   }
 
   onDateChange(): void {
-    this.selectedTheatre = '';
+    this.selectedHall = '';
     this.selectedTime = '';
-    this.updateTheatres();
+    this.updateHalls();
   }
 
-  onTheatreChange(): void {
+  onHallChange(): void {
     this.selectedTime = '';
     this.updateTimes();
   }
@@ -82,6 +86,15 @@ export class MoviedetailsComponent implements OnInit {
   }
 
   goToTickets(): void {
+    const match = this.showtimeService
+    .getShowtimesByMovieDateAndTheatre(this.movieId, this.selectedDate!, this.selectedHall!)
+      .find(s => s.time === this.selectedTime);
     
+    if (!match) {
+      alert('❌ Showtime not found.');
+      return;
+    }
+  
+    this.router.navigate(['/seats', match.id]);
   }
-}
+}  

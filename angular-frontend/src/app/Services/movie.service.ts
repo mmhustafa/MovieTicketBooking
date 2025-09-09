@@ -14,7 +14,8 @@ export class MovieService {
       year: 2023,
       posterUrl: 'https://upload.wikimedia.org/wikipedia/en/e/e0/The_Amazing_Spider-Man_%28film%29_poster.jpg',
       status:'NowShowing',
-    "overview" : "lorem ahkjhgkjl"
+      overview : "lorem ahkjhgkjl",
+      rating:9
 
     },
     {
@@ -25,8 +26,8 @@ export class MovieService {
       year: 2019,
       posterUrl: 'https://upload.wikimedia.org/wikipedia/en/e/e0/The_Amazing_Spider-Man_%28film%29_poster.jpg',
       status:'NowShowing',
-    "overview" : "lorem ahkjhgkjl"
-
+      overview : "lorem ahkjhgkjl",
+      rating:9
     },
     {
       id: 3,
@@ -36,8 +37,8 @@ export class MovieService {
       year: 2010,
       posterUrl: 'https://upload.wikimedia.org/wikipedia/en/e/e0/The_Amazing_Spider-Man_%28film%29_poster.jpg',
       status:'NowShowing',
-    "overview" : "lorem ahkjhgkjl"
-
+      overview : "lorem ahkjhgkjl",
+      rating:9
 
     },
     {
@@ -48,8 +49,8 @@ export class MovieService {
       year: 2014,
       posterUrl: 'https://upload.wikimedia.org/wikipedia/en/e/e0/The_Amazing_Spider-Man_%28film%29_poster.jpg',
       status:'NowShowing',
-    "overview" : "lorem ahkjhgkjl"
-
+      overview : "lorem ahkjhgkjl",
+      rating:9
     },
     {
     "id": 8,
@@ -59,8 +60,8 @@ export class MovieService {
     "year": 2014,
     "posterUrl": "https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg",
     "status": "ComingSoon",
-    "overview" : "lorem ahkjhgkjl"
-
+    "overview" : "lorem ahkjhgkjl",
+    rating:9
   },
   {
     "id": 5,
@@ -70,7 +71,8 @@ export class MovieService {
     "year": 2010,
     "posterUrl": "https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg",
     "status": "ComingSoon",
-    "overview" : "lorem ahkjhgkjl"
+    "overview" : "lorem ahkjhgkjl",
+    rating:9
   },
   {
     "id": 6,
@@ -80,7 +82,8 @@ export class MovieService {
     "year": 2024,
     "posterUrl": "https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg",
     "status": "ComingSoon",
-    "overview" : "lorem ahkjhgkjl"
+    "overview" : "lorem ahkjhgkjl",
+    rating:9
   },
   {
     "id": 7,
@@ -90,7 +93,8 @@ export class MovieService {
     "year": 2025,
     "posterUrl": "https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg",
     "status": "ComingSoon",
-    "overview" : "lorem ahkjhgkjl"
+    "overview" : "lorem ahkjhgkjl",
+    rating:9
   }
 ]
 

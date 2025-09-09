@@ -2,54 +2,56 @@
   <h2 class="text-light mb-4 text-center">Showtimes</h2>
 
   <div class="select-group">
-
-    <div class="select-wrapper">
-      <label class="text-light me-2">Theatre:</label>
-      <select [(ngModel)]="selectedTheatre" (change)="loadShowtimes()">
-        <option *ngFor="let t of theatres" [value]="t">{{ t }}</option>
-      </select>
-    </div>
-
     <div class="select-wrapper">
       <label class="text-light me-2">Date:</label>
       <select [(ngModel)]="selectedDate" (change)="loadShowtimes()">
         <option *ngFor="let d of dates" [value]="d">{{ d }}</option>
       </select>
     </div>
-
+    
+    <div class="select-wrapper">
+      <label class="text-light me-2">Hall:</label>
+      <select [(ngModel)]="selectedHall" (change)="loadShowtimes()">
+        <option *ngFor="let h of halls" [value]="h">{{ h }}</option>
+      </select>
+    </div>
   </div>
 
+  
   <div *ngFor="let s of showtimes" class="showtime-card">
     <div *ngIf="getMovie(s.movieId) as movie" class="d-flex align-items-center">
       <img [src]="movie.posterUrl" alt="{{ movie.title }}" width="100" height="150" class="me-3">
       <div class="showtime-info">
         <h4 class="text-light">{{ movie.title }}</h4>
-        <p >{{ movie.genre }} | {{ movie.duration }} | {{ movie.year }}</p>
+        <p>{{ movie.genre }} | {{ movie.duration }} | {{ movie.year }}</p>
+        <p class="text-light">{{ movie.overview }}</p>
       </div>
     </div>
+
+    
     <div class="showtime-times mt-3">
       <button 
         class="btn me-2 mb-2"
         *ngFor="let time of s.times"
         [ngClass]="{
-          'selected': selectedTimes[s.id] === time,
-          'btn-outline-info': selectedTimes[s.id] !== time,
+          'selected': selectedTimes[s.movieId] === time,
+          'btn-outline-info': selectedTimes[s.movieId] !== time
         }"
-        (click)="selectTime(s.id, time)">
+        (click)="selectTime(s.movieId, time)">
         {{ time }}
       </button>
     </div>
+
     <div class="mt-3">
       <button 
         class="btn get-tickets-btn" 
-        [disabled]="!selectedTimes[s.id]">
+        [disabled]="!selectedTimes[s.movieId]">
         Get Tickets
       </button>
     </div>
   </div>
 
   <div *ngIf="showtimes.length === 0" class="no-showtimes">
-    No movies available for the selected theatre and date.
+    No movies available for the selected hall and date.
   </div>
-
 </div>

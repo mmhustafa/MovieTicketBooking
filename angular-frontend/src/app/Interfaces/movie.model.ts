@@ -7,4 +7,5 @@ export interface Movie {
   posterUrl: string;
   overview :string;
   status: 'NowShowing' | 'ComingSoon';
+  rating : number;
 }

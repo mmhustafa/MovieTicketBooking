@@ -1,0 +1,53 @@
+<div class="seats-container">
+
+  <!-- Title -->
+  <h2 class="text-light mb-4 text-center fw-bold">Select Your Seats</h2>
+  <!-- Movie & Showtime Modern Header -->
+<div class="movie-header-modern text-center">
+  <div class="hall-text">Hall {{ showtime?.hallId }}</div>
+  <div class="datetime-row">
+    <div class="datetime-pill">{{ showtime?.date }}</div>
+    <div class="datetime-pill">{{ showtime?.time }}</div>
+  </div>
+  <h1 class="movie-title-modern">{{ movie?.title }}</h1>
+</div>
+
+  <!-- Screen -->
+  <div class="screen text-center mb-4">
+    <div class="screen-shape"></div>
+    <p>SCREEN</p>
+  </div>
+
+  <div *ngFor="let row of seatRows" class="seat-row">
+  <ng-container *ngFor="let seat of row; let i = index">
+    <div class="seat"
+         [ngClass]="{
+           'reserved': seat.reserved,
+           'selected': selectedSeats.includes(seat.id),
+           'available': !seat.reserved
+         }"
+         (click)="!seat.reserved && toggleSeat(seat.id)">
+      {{ seat.row }}{{ seat.number }}
+    </div>
+    
+    <div *ngIf="i === (row.length / 2 - 1)" class="aisle-gap"></div>
+  </ng-container>
+</div>
+
+
+
+  <!-- Legend -->
+  <div class="legend">
+    <span class="legend-item available">Available</span>
+    <span class="legend-item reserved">Reserved</span>
+    <span class="legend-item selected">Selected</span>
+  </div>
+
+  <!-- Confirm Button -->
+  <div class="text-center">
+    <button class="btn-confirm shadow"
+            [disabled]="!selectedSeats.length">
+      Confirm Selection ({{ selectedSeats.length }} seats)
+    </button>
+  </div>
+</div>

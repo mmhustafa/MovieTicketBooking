@@ -1,3 +1,4 @@
+
 <div class="details-wrapper">
   <!-- Poster (left) -->
   <div class="poster">
@@ -14,6 +15,11 @@
       <span>{{ movie.duration }}</span>
       <span>|</span>
       <span>{{ movie.year }}</span>
+      <span>|</span>
+      <span >
+        {{ movie.rating }}
+        <i class="bi bi-star-fill text-warning ms-1"></i>
+      </span>
       <span class="status" [class.now]="movie.status === 'NowShowing'" [class.soon]="movie.status === 'ComingSoon'">
         {{ movie.status === 'NowShowing' ? 'Now Showing' : 'Coming Soon' }}
       </span>
@@ -33,9 +39,9 @@
       </div>
 
       <div class="select-wrapper">
-        <label>Select Theatre</label>
-        <select [(ngModel)]="selectedTheatre" (change)="onTheatreChange()" [disabled]="!theatres.length">
-          <option *ngFor="let t of theatres" [value]="t">{{ t }}</option>
+        <label>Select Hall</label>
+        <select [(ngModel)]="selectedHall" (change)="onHallChange()" [disabled]="!halls.length">
+          <option *ngFor="let t of halls" [value]="t">{{ t }}</option>
         </select>
       </div>
     </div>
@@ -54,13 +60,13 @@
     </div>
 
     <ng-template #noTimes>
-      <p class="no-times">No times available for this Movie</p>
+      <p class="no-times ">No times available for this Movie</p>
     </ng-template>
 
     <!-- CTA -->
     <button
       class="btn-ticket"
-      [disabled]="!selectedDate || !selectedTheatre || !selectedTime"
+      [disabled]="!selectedDate || !selectedHall || !selectedTime"
       (click)="goToTickets()">
       Get Tickets
     </button>

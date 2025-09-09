@@ -1,7 +1,7 @@
 export interface Showtime {
   id: number;
   movieId: number;
-  theatre: string;
+  hallId: string;
   date: string;     
-  times: string[];  
+  time: string;  
 }
