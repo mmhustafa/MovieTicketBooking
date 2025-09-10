@@ -11,15 +11,15 @@ export class ShowtimeService {
 
   // ✅ Halls
   private halls: Hall[] = [
-    { id: 1, name: 'Hall 1', capacity: 180, rows: 10, seatsPerRow: 18 },
-    { id: 2, name: 'Hall 2', capacity: 30, rows: 5, seatsPerRow: 6 }
+    { id: 1, name: 'Hall 1', capacity: 180, rows: 10, seatsPerRow: 18,ticketprice:150 },
+    { id: 2, name: 'Hall 2', capacity: 30, rows: 5, seatsPerRow: 6, ticketprice:150 }
   ];
 
   // ✅ Showtimes
   private showtimes: Showtime[] = [
-    { id: 1, movieId: 1, hallId: '1', date: '2025-09-13', time: '11:30 AM' },
-    { id: 2, movieId: 1, hallId: '1', date: '2025-09-13', time: '06:00 PM' },
-    { id: 3, movieId: 2, hallId: '2', date: '2025-09-14', time: '04:00 PM' }
+    { id: 1, movieId: 1, hallId: 1, date: '2025-09-13', time: '11:30 AM' },
+    { id: 2, movieId: 1, hallId: 1, date: '2025-09-13', time: '06:00 PM' },
+    { id: 3, movieId: 2, hallId: 2, date: '2025-09-14', time: '04:00 PM' }
   ];
 
   // ✅ Seats (Static build for halls)
@@ -70,7 +70,7 @@ export class ShowtimeService {
     return this.showtimes;
   }
 
-  getTheatres(): string[] {
+  getTheatres(): number[] {
     return [...new Set(this.showtimes.map(s => s.hallId))];
   }
 
@@ -78,11 +78,11 @@ export class ShowtimeService {
     return [...new Set(this.showtimes.map(s => s.date))];
   }
 
-  getShowtimesByDateAndTheatre(date: string, theatre: string): Showtime[] {
+  getShowtimesByDateAndTheatre(date: string, theatre: number): Showtime[] {
     return this.showtimes.filter(s => s.date === date && s.hallId === theatre);
   }
 
-  getShowtimesByMovieDateAndTheatre(movieId: number, date: string, theatre: string): Showtime[] {
+  getShowtimesByMovieDateAndTheatre(movieId: number, date: string, theatre: number): Showtime[] {
     return this.showtimes.filter(
       s => s.movieId === movieId && s.date === date && s.hallId === theatre
     );
@@ -91,7 +91,7 @@ export class ShowtimeService {
   getShowtimesByMovie(movieId: number): Showtime[] {
     return this.showtimes.filter(s => s.movieId === movieId);
   }
-  getSeatsByHall(hallId: string, showtimeId: number): any[] {
+  getSeatsByHall(hallId: number, showtimeId: number): any[] {
   const hallSeats = this.seats.filter(s => s.hallId === +hallId);
 
   const reservedSeats = this.reservations
@@ -103,5 +103,9 @@ export class ShowtimeService {
     reserved: reservedSeats.includes(s.id)
   }));
  }
+getHallPrice(hallId: number): number {
+  const hall = this.halls.find(h => h.id === hallId);
+  return hall?.ticketprice ?? 0;
+}
 
 }

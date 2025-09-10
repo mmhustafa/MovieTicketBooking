@@ -19,12 +19,12 @@ export class MoviedetailsComponent implements OnInit {
   movie!: Movie | undefined;
 
   dates: string[] = [];
-  halls: string[] = [];
+  halls: number[] = [];
   times: string[] = [];
   showtimes: Showtime[] = [];
 
   selectedDate: string | null = null;
-  selectedHall: string | null = null;
+  selectedHall: number | null = null;
   selectedTime: string | null = null;
 
   constructor(
@@ -52,7 +52,7 @@ export class MoviedetailsComponent implements OnInit {
           .map(s => s.hallId)
       )
     ];
-    this.selectedHall = this.halls[0] || '';
+    this.selectedHall = this.halls[0] || null;
     this.updateTimes();
   }
 
@@ -71,7 +71,7 @@ export class MoviedetailsComponent implements OnInit {
   }
 
   onDateChange(): void {
-    this.selectedHall = '';
+    this.selectedHall = null;
     this.selectedTime = '';
     this.updateHalls();
   }

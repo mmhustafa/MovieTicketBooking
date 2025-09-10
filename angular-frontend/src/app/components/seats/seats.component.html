@@ -12,10 +12,17 @@
   <h1 class="movie-title-modern">{{ movie?.title }}</h1>
 </div>
 
+<!-- Legend -->
+  <div class="legend">
+    <span class="legend-item available">Available</span>
+    <span class="legend-item reserved">Reserved</span>
+    <span class="legend-item selected">Selected</span>
+  </div>
+
   <!-- Screen -->
   <div class="screen text-center mb-4">
     <div class="screen-shape"></div>
-    <p>SCREEN</p>
+    <p>Screen</p>
   </div>
 
   <div *ngFor="let row of seatRows" class="seat-row">
@@ -35,19 +42,19 @@
 </div>
 
 
-
-  <!-- Legend -->
-  <div class="legend">
-    <span class="legend-item available">Available</span>
-    <span class="legend-item reserved">Reserved</span>
-    <span class="legend-item selected">Selected</span>
+    <!-- Summary Section -->
+  <div class="summary-card mt-4 text-center">
+    <h4 class="fw-bold">Booking Summary</h4>
+    <p class="fw-bold">Tickets: {{ selectedSeats.length }}</p>
+    <p class="fw-bold">Price per ticket: {{ ticketprice }} EGP</p>
+    <p class="total">Total: {{ totalprice }} EGP</p>
   </div>
 
   <!-- Confirm Button -->
   <div class="text-center">
     <button class="btn-confirm shadow"
             [disabled]="!selectedSeats.length">
-      Confirm Selection ({{ selectedSeats.length }} seats)
+      Confirm Selection 
     </button>
   </div>
-</div>
+

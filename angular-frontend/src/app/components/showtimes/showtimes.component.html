@@ -12,7 +12,7 @@
     <div class="select-wrapper">
       <label class="text-light me-2">Hall:</label>
       <select [(ngModel)]="selectedHall" (change)="loadShowtimes()">
-        <option *ngFor="let h of halls" [value]="h">{{ h }}</option>
+        <option *ngFor="let h of halls" [ngValue]="h">{{ h }}</option>
       </select>
     </div>
   </div>

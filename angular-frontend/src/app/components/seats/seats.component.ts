@@ -21,6 +21,8 @@ export class SeatsComponent {
   seats: any[] = [];
   selectedSeats: number[] = [];
   seatRows: any[][] = [];
+  ticketprice:number =0;
+  totalprice:number=0; 
 
   constructor(
     private route: ActivatedRoute,
@@ -35,6 +37,7 @@ export class SeatsComponent {
     if (this.showtime) {
       this.movie = this.movieService.getMovieById(this.showtime.movieId);
       this.seats = this.showtimeService.getSeatsByHall(this.showtime.hallId, this.showtimeId);
+      this.ticketprice = this.showtimeService.getHallPrice(this.showtime.hallId);
       const grouped : {[key:string]:any[]} = {};
       this.seats.forEach(seat => {
       if (!grouped[seat.row]) {
@@ -52,5 +55,6 @@ export class SeatsComponent {
     } else {
       this.selectedSeats.push(seatId);
     }
+    this.totalprice = this.selectedSeats.length* this.ticketprice;
   }
 }

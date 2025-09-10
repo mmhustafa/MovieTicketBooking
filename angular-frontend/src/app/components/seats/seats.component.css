@@ -132,6 +132,7 @@
   border-radius: 20px;
   font-size: 0.85rem;
   font-weight: 500;
+  margin-bottom: 25px;
 }
 
 .legend-item.available {
@@ -147,10 +148,36 @@
   background: #8D51CE;
   color: #fff;
 }
+.summary-card {
+  background: #1f2024;
+  border: 1px solid rgba(141, 81, 206, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+  max-width: 400px;
+  margin: 1.5rem auto 0.5rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
 
-/* Confirm Button */
+.summary-card h4 {
+  color: #8D51CE;
+  margin-bottom: 1rem;
+}
+
+.summary-card p {
+  margin: 6px 0;
+  font-size: 1rem;
+  color: #ddd;
+}
+
+.summary-card .total {
+  font-weight: bold;
+  color: #8D51CE;
+  font-size: 1.2rem;
+}
+
+
 .btn-confirm {
-  margin-top: 2rem;
+  margin-top: 1rem;
   background: #8D51CE;
   color: #fff;
   font-weight: 600;

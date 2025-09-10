@@ -81,13 +81,13 @@ interface GroupedShowtime {
   styleUrl: './showtimes.component.css'
 })
 export class ShowtimesComponent implements OnInit {
-  halls: string[] = [];
-  selectedHall: string = '';
+  halls: number[] = [];
+  selectedHall: number | null = null;
 
   dates: string[] = [];
   selectedDate: string = '';
 
-  // لكل فيلم، هنسجل الوقت اللي اختاره اليوزر
+  
   selectedTimes: { [movieId: number]: string } = {};
 
   showtimes: GroupedShowtime[] = [];
@@ -103,7 +103,7 @@ export class ShowtimesComponent implements OnInit {
     this.halls = this.showtimeservice.getTheatres(); 
     this.dates = this.showtimeservice.getDates();
 
-    this.selectedHall = this.halls.length ? this.halls[0] : '';
+    this.selectedHall = this.halls.length ? this.halls[0] : null;
     this.selectedDate = this.dates.length ? this.dates[0] : '';
 
     this.loadShowtimes();

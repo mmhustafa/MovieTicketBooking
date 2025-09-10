@@ -4,4 +4,5 @@ export interface Hall {
   capacity: number;
   rows: number;       
   seatsPerRow: number; 
+  ticketprice : number;
 }
