@@ -1,4 +1,8 @@
-﻿namespace MovieTicket.Core.Models
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace MovieTicket.Core.Models
 {
     public class ReservedSeat
     {

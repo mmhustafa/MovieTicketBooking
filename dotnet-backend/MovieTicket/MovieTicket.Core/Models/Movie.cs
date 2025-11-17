@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace MovieTicket.Core.Models
 {
@@ -18,7 +16,7 @@ namespace MovieTicket.Core.Models
         public string Status { get; set; }
         public double Rating { get; set; }
 
-        
+
         public ICollection<Showtime> Showtimes { get; set; } = new List<Showtime>();
 
     }

@@ -3,16 +3,48 @@
   "WorkspaceRootPath": "C:\\TicketProject\\dotnet-backend\\MovieTicket\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\TicketProject\\dotnet-backend\\MovieTicket\\MovieTicket\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MovieTicket\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\TicketProject\\dotnet-backend\\MovieTicket\\MovieTicket.Infastructure\\Migrations\\20251117131615_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MovieTicket.Infastructure\\Migrations\\20251117131615_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\TicketProject\\dotnet-backend\\MovieTicket\\TicketProject.DataAccess\\Data\\AppDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TicketProject.DataAccess\\Data\\AppDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BB1CD491-762F-481D-94F7-909BF5D06C72}|MovieTicket.API\\MovieTicket.API.csproj|c:\\ticketproject\\dotnet-backend\\movieticket\\movieticket.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{BB1CD491-762F-481D-94F7-909BF5D06C72}|MovieTicket.API\\MovieTicket.API.csproj|solutionrelative:movieticket.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\TicketProject\\dotnet-backend\\MovieTicket\\TicketProject.DataAccess\\MovieTicket.DataAccess.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TicketProject.DataAccess\\MovieTicket.DataAccess.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{BB1CD491-762F-481D-94F7-909BF5D06C72}|MovieTicket.API\\MovieTicket.API.csproj|c:\\ticketproject\\dotnet-backend\\movieticket\\movieticket.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB1CD491-762F-481D-94F7-909BF5D06C72}|MovieTicket.API\\MovieTicket.API.csproj|solutionrelative:movieticket.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3032D187-F7A6-427A-B9DC-7EFC048B3D9A}|MovieTicket.Infastructure\\MovieTicket.Infastructure.csproj|c:\\ticketproject\\dotnet-backend\\movieticket\\movieticket.infastructure\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3032D187-F7A6-427A-B9DC-7EFC048B3D9A}|MovieTicket.Infastructure\\MovieTicket.Infastructure.csproj|solutionrelative:movieticket.infastructure\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23EF4CD1-77BA-4A3B-B801-92A9AA1D2AAA}|MovieTicket.Core\\MovieTicket.Core.csproj|c:\\ticketproject\\dotnet-backend\\movieticket\\movieticket.core\\models\\showtime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23EF4CD1-77BA-4A3B-B801-92A9AA1D2AAA}|MovieTicket.Core\\MovieTicket.Core.csproj|solutionrelative:movieticket.core\\models\\showtime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23EF4CD1-77BA-4A3B-B801-92A9AA1D2AAA}|MovieTicket.Core\\MovieTicket.Core.csproj|c:\\ticketproject\\dotnet-backend\\movieticket\\movieticket.core\\models\\seat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23EF4CD1-77BA-4A3B-B801-92A9AA1D2AAA}|MovieTicket.Core\\MovieTicket.Core.csproj|solutionrelative:movieticket.core\\models\\seat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23EF4CD1-77BA-4A3B-B801-92A9AA1D2AAA}|MovieTicket.Core\\MovieTicket.Core.csproj|c:\\ticketproject\\dotnet-backend\\movieticket\\movieticket.core\\models\\reservedseat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23EF4CD1-77BA-4A3B-B801-92A9AA1D2AAA}|MovieTicket.Core\\MovieTicket.Core.csproj|solutionrelative:movieticket.core\\models\\reservedseat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23EF4CD1-77BA-4A3B-B801-92A9AA1D2AAA}|MovieTicket.Core\\MovieTicket.Core.csproj|c:\\ticketproject\\dotnet-backend\\movieticket\\movieticket.core\\models\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23EF4CD1-77BA-4A3B-B801-92A9AA1D2AAA}|MovieTicket.Core\\MovieTicket.Core.csproj|solutionrelative:movieticket.core\\models\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23EF4CD1-77BA-4A3B-B801-92A9AA1D2AAA}|MovieTicket.Core\\MovieTicket.Core.csproj|c:\\ticketproject\\dotnet-backend\\movieticket\\movieticket.core\\models\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23EF4CD1-77BA-4A3B-B801-92A9AA1D2AAA}|MovieTicket.Core\\MovieTicket.Core.csproj|solutionrelative:movieticket.core\\models\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23EF4CD1-77BA-4A3B-B801-92A9AA1D2AAA}|MovieTicket.Core\\MovieTicket.Core.csproj|c:\\ticketproject\\dotnet-backend\\movieticket\\movieticket.core\\models\\hall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23EF4CD1-77BA-4A3B-B801-92A9AA1D2AAA}|MovieTicket.Core\\MovieTicket.Core.csproj|solutionrelative:movieticket.core\\models\\hall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23EF4CD1-77BA-4A3B-B801-92A9AA1D2AAA}|MovieTicket.Core\\MovieTicket.Core.csproj|c:\\ticketproject\\dotnet-backend\\movieticket\\movieticket.core\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23EF4CD1-77BA-4A3B-B801-92A9AA1D2AAA}|MovieTicket.Core\\MovieTicket.Core.csproj|solutionrelative:movieticket.core\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,50 +54,169 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\TicketProject\\dotnet-backend\\MovieTicket\\MovieTicket\\Program.cs",
-              "RelativeDocumentMoniker": "MovieTicket\\Program.cs",
-              "ToolTip": "C:\\TicketProject\\dotnet-backend\\MovieTicket\\MovieTicket\\Program.cs",
-              "RelativeToolTip": "MovieTicket\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-16T12:40:29.642Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "20251117131615_init.cs",
+              "DocumentMoniker": "C:\\TicketProject\\dotnet-backend\\MovieTicket\\MovieTicket.Infastructure\\Migrations\\20251117131615_init.cs",
+              "RelativeDocumentMoniker": "MovieTicket.Infastructure\\Migrations\\20251117131615_init.cs",
+              "ToolTip": "C:\\TicketProject\\dotnet-backend\\MovieTicket\\MovieTicket.Infastructure\\Migrations\\20251117131615_init.cs",
+              "RelativeToolTip": "MovieTicket.Infastructure\\Migrations\\20251117131615_init.cs",
+              "ViewState": "AgIAAMoAAAAAAAAAAAAgwB0AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T13:16:15.419Z",
+              "EditorCaption": ""
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\TicketProject\\dotnet-backend\\MovieTicket\\TicketProject.DataAccess\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "TicketProject.DataAccess\\Data\\AppDbContext.cs",
-              "ToolTip": "C:\\TicketProject\\dotnet-backend\\MovieTicket\\TicketProject.DataAccess\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "TicketProject.DataAccess\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-16T12:40:08.195Z",
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\TicketProject\\dotnet-backend\\MovieTicket\\MovieTicket.API\\appsettings.json",
+              "RelativeDocumentMoniker": "MovieTicket.API\\appsettings.json",
+              "ToolTip": "C:\\TicketProject\\dotnet-backend\\MovieTicket\\MovieTicket.API\\appsettings.json",
+              "RelativeToolTip": "MovieTicket.API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-17T13:13:35.844Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "MovieTicket.DataAccess.csproj",
-              "DocumentMoniker": "C:\\TicketProject\\dotnet-backend\\MovieTicket\\TicketProject.DataAccess\\MovieTicket.DataAccess.csproj",
-              "RelativeDocumentMoniker": "TicketProject.DataAccess\\MovieTicket.DataAccess.csproj",
-              "ToolTip": "C:\\TicketProject\\dotnet-backend\\MovieTicket\\TicketProject.DataAccess\\MovieTicket.DataAccess.csproj",
-              "RelativeToolTip": "TicketProject.DataAccess\\MovieTicket.DataAccess.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-16T12:39:56.414Z",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\TicketProject\\dotnet-backend\\MovieTicket\\MovieTicket.API\\Program.cs",
+              "RelativeDocumentMoniker": "MovieTicket.API\\Program.cs",
+              "ToolTip": "C:\\TicketProject\\dotnet-backend\\MovieTicket\\MovieTicket.API\\Program.cs",
+              "RelativeToolTip": "MovieTicket.API\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T13:12:21.114Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\TicketProject\\dotnet-backend\\MovieTicket\\MovieTicket.Infastructure\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "MovieTicket.Infastructure\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\TicketProject\\dotnet-backend\\MovieTicket\\MovieTicket.Infastructure\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "MovieTicket.Infastructure\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T13:10:16.639Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Showtime.cs",
+              "DocumentMoniker": "C:\\TicketProject\\dotnet-backend\\MovieTicket\\MovieTicket.Core\\Models\\Showtime.cs",
+              "RelativeDocumentMoniker": "MovieTicket.Core\\Models\\Showtime.cs",
+              "ToolTip": "C:\\TicketProject\\dotnet-backend\\MovieTicket\\MovieTicket.Core\\Models\\Showtime.cs",
+              "RelativeToolTip": "MovieTicket.Core\\Models\\Showtime.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T12:57:12.384Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Seat.cs",
+              "DocumentMoniker": "C:\\TicketProject\\dotnet-backend\\MovieTicket\\MovieTicket.Core\\Models\\Seat.cs",
+              "RelativeDocumentMoniker": "MovieTicket.Core\\Models\\Seat.cs",
+              "ToolTip": "C:\\TicketProject\\dotnet-backend\\MovieTicket\\MovieTicket.Core\\Models\\Seat.cs",
+              "RelativeToolTip": "MovieTicket.Core\\Models\\Seat.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T12:57:11.997Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ReservedSeat.cs",
+              "DocumentMoniker": "C:\\TicketProject\\dotnet-backend\\MovieTicket\\MovieTicket.Core\\Models\\ReservedSeat.cs",
+              "RelativeDocumentMoniker": "MovieTicket.Core\\Models\\ReservedSeat.cs",
+              "ToolTip": "C:\\TicketProject\\dotnet-backend\\MovieTicket\\MovieTicket.Core\\Models\\ReservedSeat.cs",
+              "RelativeToolTip": "MovieTicket.Core\\Models\\ReservedSeat.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T12:57:11.697Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Reservation.cs",
+              "DocumentMoniker": "C:\\TicketProject\\dotnet-backend\\MovieTicket\\MovieTicket.Core\\Models\\Reservation.cs",
+              "RelativeDocumentMoniker": "MovieTicket.Core\\Models\\Reservation.cs",
+              "ToolTip": "C:\\TicketProject\\dotnet-backend\\MovieTicket\\MovieTicket.Core\\Models\\Reservation.cs",
+              "RelativeToolTip": "MovieTicket.Core\\Models\\Reservation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T12:57:11.391Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Hall.cs",
+              "DocumentMoniker": "C:\\TicketProject\\dotnet-backend\\MovieTicket\\MovieTicket.Core\\Models\\Hall.cs",
+              "RelativeDocumentMoniker": "MovieTicket.Core\\Models\\Hall.cs",
+              "ToolTip": "C:\\TicketProject\\dotnet-backend\\MovieTicket\\MovieTicket.Core\\Models\\Hall.cs",
+              "RelativeToolTip": "MovieTicket.Core\\Models\\Hall.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T12:57:11.119Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Movie.cs",
+              "DocumentMoniker": "C:\\TicketProject\\dotnet-backend\\MovieTicket\\MovieTicket.Core\\Models\\Movie.cs",
+              "RelativeDocumentMoniker": "MovieTicket.Core\\Models\\Movie.cs",
+              "ToolTip": "C:\\TicketProject\\dotnet-backend\\MovieTicket\\MovieTicket.Core\\Models\\Movie.cs",
+              "RelativeToolTip": "MovieTicket.Core\\Models\\Movie.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T12:57:10.852Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "C:\\TicketProject\\dotnet-backend\\MovieTicket\\MovieTicket.Core\\Models\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "MovieTicket.Core\\Models\\ApplicationUser.cs",
+              "ToolTip": "C:\\TicketProject\\dotnet-backend\\MovieTicket\\MovieTicket.Core\\Models\\ApplicationUser.cs",
+              "RelativeToolTip": "MovieTicket.Core\\Models\\ApplicationUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T12:57:10.584Z",
               "EditorCaption": ""
             }
           ]

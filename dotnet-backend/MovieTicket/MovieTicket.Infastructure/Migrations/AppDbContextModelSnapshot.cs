@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using MovieTicket.DataAccess.Data;
+using MovieTicket.Infastructure.Data;
 
 #nullable disable
 
-namespace MovieTicket.DataAccess.Migrations
+namespace MovieTicket.Infastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     partial class AppDbContextModelSnapshot : ModelSnapshot

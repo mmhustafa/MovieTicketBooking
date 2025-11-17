@@ -1,4 +1,8 @@
-﻿namespace MovieTicket.Core.Models
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace MovieTicket.Core.Models
 {
     public class Hall
     {
@@ -9,8 +13,8 @@
         public int SeatsPerRow { get; set; }
         public int Rows { get; set; }
 
-        // Navigation
         public ICollection<Seat> Seats { get; set; } = new List<Seat>();
         public ICollection<Showtime> Showtimes { get; set; } = new List<Showtime>();
+
     }
 }

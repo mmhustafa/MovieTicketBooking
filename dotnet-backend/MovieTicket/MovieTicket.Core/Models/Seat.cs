@@ -1,4 +1,8 @@
-﻿namespace MovieTicket.Core.Models
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace MovieTicket.Core.Models
 {
     public class Seat
     {
@@ -7,7 +11,7 @@
         public string Row { get; set; }
         public int Number { get; set; }
 
-        
+
         public Hall Hall { get; set; }
     }
 }

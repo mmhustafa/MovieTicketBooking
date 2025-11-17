@@ -5,14 +5,14 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using MovieTicket.DataAccess.Data;
+using MovieTicket.Infastructure.Data;
 
 #nullable disable
 
-namespace MovieTicket.DataAccess.Migrations
+namespace MovieTicket.Infastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20251116121424_init")]
+    [Migration("20251117131615_init")]
     partial class init
     {
         /// <inheritdoc />

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace MovieTicket.Core.Models
 {
@@ -10,7 +12,7 @@ namespace MovieTicket.Core.Models
         public string Date { get; set; }
         public string Time { get; set; }
 
-        
+
         public Movie Movie { get; set; }
         public Hall Hall { get; set; }
         public ICollection<Reservation> Reservations { get; set; } = new List<Reservation>();

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace MovieTicket.DataAccess.Migrations
+namespace MovieTicket.Infastructure.Migrations
 {
     /// <inheritdoc />
     public partial class init : Migration
