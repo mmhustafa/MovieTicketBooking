@@ -35,7 +35,9 @@ export class MoviedetailsComponent implements OnInit {
   ) {}
   ngOnInit(): void {
     this.movieId = Number(this.route.snapshot.paramMap.get('id'));
-    this.movie = this.movieService.getMovieById(this.movieId);
+    this.movieService.getMovieById(this.movieId).subscribe(data => {
+    this.movie = data;
+  });
     this.showtimes = this.showtimeService.getShowtimesByMovie(this.movieId);
     this.dates = [...new Set(this.showtimes.map(s => s.date))];
     

@@ -35,7 +35,9 @@ export class SeatsComponent {
     this.showtime = this.showtimeService.getShowtimes().find(s => s.id === this.showtimeId);
 
     if (this.showtime) {
-      this.movie = this.movieService.getMovieById(this.showtime.movieId);
+      this.movieService.getMovieById(this.showtime.movieId).subscribe(data => {
+  this.movie = data;
+});
       this.seats = this.showtimeService.getSeatsByHall(this.showtime.hallId, this.showtimeId);
       this.ticketprice = this.showtimeService.getHallPrice(this.showtime.hallId);
       const grouped : {[key:string]:any[]} = {};

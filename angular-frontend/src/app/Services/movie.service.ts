@@ -1,118 +1,44 @@
-import { Injectable } from '@angular/core';
-import { Movie } from '../Interfaces/movie.model';
+  import { Injectable } from '@angular/core';
+  import { Movie } from '../Interfaces/movie.model';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class MovieService {
-  private movies: Movie[] = [
-    {
-      id: 1,
-      title: 'The Amazing Spider-Man',
-      genre: 'Action',
-      duration: '2h 15m',
-      year: 2023,
-      posterUrl: 'https://upload.wikimedia.org/wikipedia/en/e/e0/The_Amazing_Spider-Man_%28film%29_poster.jpg',
-      status:'NowShowing',
-      overview : "lorem ahkjhgkjl",
-      rating:9
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class MovieService {
+  private apiUrl = 'http://localhost:5158/api/movies';
 
-    },
-    {
-      id: 2,
-      title: 'Avengers: Endgame',
-      genre: 'Action/Adventure',
-      duration: '3h 1m',
-      year: 2019,
-      posterUrl: 'https://upload.wikimedia.org/wikipedia/en/e/e0/The_Amazing_Spider-Man_%28film%29_poster.jpg',
-      status:'NowShowing',
-      overview : "lorem ahkjhgkjl",
-      rating:9
-    },
-    {
-      id: 3,
-      title: 'Inception',
-      genre: 'Sci-Fi/Thriller',
-      duration: '2h 28m',
-      year: 2010,
-      posterUrl: 'https://upload.wikimedia.org/wikipedia/en/e/e0/The_Amazing_Spider-Man_%28film%29_poster.jpg',
-      status:'NowShowing',
-      overview : "lorem ahkjhgkjl",
-      rating:9
+  constructor(private http: HttpClient) { }
 
-    },
-    {
-      id: 4,
-      title: 'Interstellar',
-      genre: 'Sci-Fi/Drama',
-      duration: '2h 49m',
-      year: 2014,
-      posterUrl: 'https://upload.wikimedia.org/wikipedia/en/e/e0/The_Amazing_Spider-Man_%28film%29_poster.jpg',
-      status:'NowShowing',
-      overview : "lorem ahkjhgkjl",
-      rating:9
-    },
-    {
-    "id": 8,
-    "title": "Interstellar",
-    "genre": "Sci-Fi/Drama",
-    "duration": "2h 49m",
-    "year": 2014,
-    "posterUrl": "https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg",
-    "status": "ComingSoon",
-    "overview" : "lorem ahkjhgkjl",
-    rating:9
-  },
-  {
-    "id": 5,
-    "title": "Inception",
-    "genre": "Sci-Fi/Thriller",
-    "duration": "2h 28m",
-    "year": 2010,
-    "posterUrl": "https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg",
-    "status": "ComingSoon",
-    "overview" : "lorem ahkjhgkjl",
-    rating:9
-  },
-  {
-    "id": 6,
-    "title": "Dune: Part Two",
-    "genre": "Sci-Fi/Adventure",
-    "duration": "2h 46m",
-    "year": 2024,
-    "posterUrl": "https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg",
-    "status": "ComingSoon",
-    "overview" : "lorem ahkjhgkjl",
-    rating:9
-  },
-  {
-    "id": 7,
-    "title": "The Batman 2",
-    "genre": "Action/Crime",
-    "duration": "2h 55m",
-    "year": 2025,
-    "posterUrl": "https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg",
-    "status": "ComingSoon",
-    "overview" : "lorem ahkjhgkjl",
-    rating:9
+  getallMovies(): Observable<Movie[]> {
+    return this.http.get<Movie[]>(`${this.apiUrl}`);
   }
-]
+  getMovies(
+    status: string = 'All',
+    search: string = '',
+    page: number = 1,
+    pageSize: number = 8
+  ): Observable<any> {
 
+    let params = new HttpParams()
+      .set('status', status)
+      .set('search', search)
+      .set('page', page)
+      .set('pageSize', pageSize);
 
-  constructor() { }
-  getMovies(): Movie[] {
-    return this.movies;
-  }
-  getMovieById(id: number): Movie | undefined {
-  return this.movies.find(m => m.id === id);
+    return this.http.get<any>(`${this.apiUrl}`, { params });
   }
 
-  getNowShowing(): Movie[] {
-    return this.movies.filter(movie => movie.status === 'NowShowing');
+  getMovieById(id: number): Observable<Movie> {
+    return this.http.get<Movie>(`${this.apiUrl}/${id}`);
   }
 
-  
-  getComingSoon(): Movie[] {
-    return this.movies.filter(movie => movie.status === 'ComingSoon');
+  getNowShowing(): Observable<Movie[]> {
+    return this.http.get<Movie[]>(`${this.apiUrl}/now-showing`);
   }
-}
+
+  getComingSoon(): Observable<Movie[]> {
+    return this.http.get<Movie[]>(`${this.apiUrl}/coming-soon`);
+  }
+  }

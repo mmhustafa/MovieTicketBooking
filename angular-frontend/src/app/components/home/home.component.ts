@@ -18,7 +18,13 @@ export class HomeComponent {
   constructor(private movieService: MovieService) {}
 
   ngOnInit(): void {
-    this.nowShowing = this.movieService.getNowShowing();
-    this.comingSoon = this.movieService.getComingSoon();
-  }
+  this.movieService.getNowShowing().subscribe(data => {
+    this.nowShowing = data;
+  });
+
+  this.movieService.getComingSoon().subscribe(data => {
+    this.comingSoon = data;
+  });
+}
+
 }

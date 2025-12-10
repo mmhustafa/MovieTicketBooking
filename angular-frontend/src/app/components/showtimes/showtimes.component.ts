@@ -99,7 +99,10 @@ export class ShowtimesComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.movies = this.movieservice.getMovies();
+    this.movieservice.getMovies().subscribe(data => {
+  this.movies = data;
+});
+
     this.halls = this.showtimeservice.getTheatres(); 
     this.dates = this.showtimeservice.getDates();
 

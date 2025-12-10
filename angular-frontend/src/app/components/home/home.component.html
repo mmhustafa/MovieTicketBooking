@@ -1,3 +1,4 @@
+  
 <div class="home-container">
 
   <!-- Hero Slider using Bootstrap Carousel -->
@@ -33,7 +34,7 @@
     </div>
 
     <div class="movie-cards">
-      <div *ngFor="let movie of nowShowing" class="movie-card">
+      <div *ngFor="let movie of nowShowing | slice:0:4" class="movie-card">
         <img [src]="movie.posterUrl" alt="{{movie.title}}" class="card-img">
         <div class="card-overlay">
           <h5>{{ movie.title }}</h5>
@@ -52,7 +53,7 @@
   </div>
 
   <div class="coming-soon-cards">
-    <div *ngFor="let movie of comingSoon" class="coming-soon-card">
+    <div *ngFor="let movie of comingSoon| slice:0:4" class="coming-soon-card">
       <img [src]="movie.posterUrl" alt="{{movie.title}}" class="card-img">
       <div class="coming-soon-overlay">
         <h5>{{ movie.title }}</h5>
@@ -63,6 +64,5 @@
     </div>
   </div>
 </div>
-
 
 </div>
