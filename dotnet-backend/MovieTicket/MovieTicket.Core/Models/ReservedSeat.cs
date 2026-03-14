@@ -10,5 +10,7 @@ namespace MovieTicket.Core.Models
         public int ReservationId { get; set; }
 
         public Reservation Reservation { get; set; }
+        public int SeatId { get; set; }
+        public Seat Seat { get; set; }
     }
 }

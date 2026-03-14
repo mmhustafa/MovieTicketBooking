@@ -1,72 +1,11 @@
-// import { Component, OnInit } from '@angular/core';
-// import { MovieService } from '../../Services/movie.service';
-// import { ShowtimeService } from '../../Services/showtime.service';
-// import { CommonModule } from '@angular/common';
-// import { Showtime } from '../../Interfaces/showtime.model';
-// import { Movie } from '../../Interfaces/movie.model';
-// import { FormsModule } from '@angular/forms';
-
-// @Component({
-//   selector: 'app-showtimes',
-//   standalone: true,
-//   imports: [CommonModule, FormsModule],
-//   templateUrl: './showtimes.component.html',
-//   styleUrl: './showtimes.component.css'
-// })
-// export class ShowtimesComponent implements OnInit {
-//   halls: string[] = [];
-//   selectedHall: string = '';
-
-//   dates: string[] = [];
-//   selectedDate: string = '';
-
-//   selectedTimes: { [showtimeId: number]: string } = {};
-
-//   showtimes: Showtime[] = [];
-//   movies: Movie[] = [];
-
-//   constructor(
-//     private movieservice: MovieService,
-//     private showtimeservice: ShowtimeService
-//   ) {}
-
-//   ngOnInit(): void {
-//     this.movies = this.movieservice.getMovies();
-//     this.halls = this.showtimeservice.getTheatres(); 
-//     this.dates = this.showtimeservice.getDates();
-
-//     this.selectedHall = this.halls.length ? this.halls[0] : '';
-//     this.selectedDate = this.dates.length ? this.dates[0] : '';
-
-//     this.loadShowtimes();
-//   }
-
-//   loadShowtimes(): void {
-//     if (this.selectedDate && this.selectedHall) {
-//       this.showtimes = this.showtimeservice.getShowtimesByDateAndTheatre(
-//         this.selectedDate,
-//         this.selectedHall
-//       );
-//     } else {
-//       this.showtimes = [];
-//     }
-//   }
-
-//   getMovie(movieId: number): Movie | undefined {
-//     return this.movies.find(m => m.id === movieId);
-//   }
-
-//   selectTime(showtimeId: number, time: string): void {
-//     this.selectedTimes[showtimeId] = time;
-//   }
-// }
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from '../../Services/movie.service';
 import { ShowtimeService } from '../../Services/showtime.service';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { Showtime } from '../../Interfaces/showtime.model';
 import { Movie } from '../../Interfaces/movie.model';
-import { FormsModule } from '@angular/forms';
+import { forkJoin } from 'rxjs/internal/observable/forkJoin';
 
 interface GroupedShowtime {
   movieId: number;
@@ -82,49 +21,64 @@ interface GroupedShowtime {
 })
 export class ShowtimesComponent implements OnInit {
   halls: number[] = [];
-  selectedHall: number | null = null;
-
   dates: string[] = [];
-  selectedDate: string = '';
-
-  
-  selectedTimes: { [movieId: number]: string } = {};
-
-  showtimes: GroupedShowtime[] = [];
   movies: Movie[] = [];
-
+  showtimes: GroupedShowtime[] = [];
+  selectedHall: number | null = null;
+  selectedDate: string = '';
+  selectedTimes: { [movieId: number]: string } = {};
   constructor(
     private movieservice: MovieService,
     private showtimeservice: ShowtimeService
   ) {}
 
-  ngOnInit(): void {
-    this.movieservice.getMovies().subscribe(data => {
-  this.movies = data;
-});
+  // ngOnInit(): void {
+    
+  //   // this.movieservice.getMovies().subscribe(data => {
+  //   //   this.movies = data;
+  //   // });
 
-    this.halls = this.showtimeservice.getTheatres(); 
-    this.dates = this.showtimeservice.getDates();
 
-    this.selectedHall = this.halls.length ? this.halls[0] : null;
-    this.selectedDate = this.dates.length ? this.dates[0] : '';
+  //   // this.showtimeservice.getTheatres().subscribe(data => {
+  //   //   this.halls = data;
+  //   //   this.selectedHall = this.halls.length ? this.halls[0] : null;
+  //   //   this.tryLoadShowtimes();
+  //   // });
+
+  //   // this.showtimeservice.getDates().subscribe(data => {
+  //   //   this.dates = data;
+  //   //   this.selectedDate = this.dates.length ? this.dates[0] : '';
+  //   //   this.tryLoadShowtimes();
+  //   // });
+    
+  // }
+ngOnInit(): void {
+  forkJoin({
+    movies: this.movieservice.getallMovies(),
+    halls: this.showtimeservice.getTheatres(),
+    dates: this.showtimeservice.getDates()
+  }).subscribe(({ movies, halls, dates }) => {
+    this.movies = movies;
+    this.halls = halls;
+    this.dates = dates;
+
+    this.selectedHall = halls.length ? halls[0] : null;
+    this.selectedDate = dates.length ? dates[0] : '';
 
     this.loadShowtimes();
-  }
+  });
+}
 
-  loadShowtimes(): void {
-    if (this.selectedDate && this.selectedHall) {
-      const rawShowtimes = this.showtimeservice.getShowtimesByDateAndTheatre(
-        this.selectedDate,
-        this.selectedHall
-      );
+ loadShowtimes(): void {
+  
+  if (!this.selectedDate || this.selectedHall === null) return;
 
-      // Grouping by movieId
+  this.showtimeservice
+    .getShowtimesByDateAndTheatre(this.selectedDate, this.selectedHall)
+    .subscribe((rawShowtimes: Showtime[]) => { 
       const grouped: { [movieId: number]: string[] } = {};
-      rawShowtimes.forEach(s => {
-        if (!grouped[s.movieId]) {
-          grouped[s.movieId] = [];
-        }
+      rawShowtimes.forEach((s: Showtime) => {  
+        if (!grouped[s.movieId]) grouped[s.movieId] = [];
         grouped[s.movieId].push(s.time);
       });
 
@@ -132,13 +86,12 @@ export class ShowtimesComponent implements OnInit {
         movieId: Number(movieId),
         times: grouped[Number(movieId)]
       }));
-    } else {
-      this.showtimes = [];
-    }
-  }
+    });
+}
 
   getMovie(movieId: number): Movie | undefined {
-    return this.movies.find(m => m.id === movieId);
+    const movie = this.movies.find(m => m.id === movieId);
+    return movie;
   }
 
   selectTime(movieId: number, time: string): void {

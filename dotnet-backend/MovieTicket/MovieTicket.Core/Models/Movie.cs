@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace MovieTicket.Core.Models
 {
@@ -16,7 +17,7 @@ namespace MovieTicket.Core.Models
         public string Status { get; set; }
         public double Rating { get; set; }
 
-
+        [JsonIgnore]
         public ICollection<Showtime> Showtimes { get; set; } = new List<Showtime>();
 
     }

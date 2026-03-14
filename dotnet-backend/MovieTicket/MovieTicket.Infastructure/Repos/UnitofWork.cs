@@ -10,11 +10,13 @@ namespace MovieTicket.Infastructure.Repos
     {
         private readonly AppDbContext context;
         public IMovieRepository MovieRepository { get; set; }
+        public IShowtimeRepository ShowtimeRepository { get; set; }
 
-        public UnitofWork(AppDbContext _context, IMovieRepository movieRepository)
+        public UnitofWork(AppDbContext _context, IMovieRepository movieRepository, IShowtimeRepository showtimeRepository)
         {
             this.context = _context;
             MovieRepository = movieRepository;
+            ShowtimeRepository = showtimeRepository;
         }
 
         public int Complete()

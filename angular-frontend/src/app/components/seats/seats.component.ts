@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ShowtimeService } from '../../Services/showtime.service';
 import { MovieService } from '../../Services/movie.service';
@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './seats.component.html',
   styleUrl: './seats.component.css'
 })
-export class SeatsComponent {
+export class SeatsComponent implements OnInit {
   showtimeId!: number;
   showtime!: Showtime | undefined;
   movie!: Movie | undefined;
@@ -21,8 +21,8 @@ export class SeatsComponent {
   seats: any[] = [];
   selectedSeats: number[] = [];
   seatRows: any[][] = [];
-  ticketprice:number =0;
-  totalprice:number=0; 
+  ticketprice: number = 0;
+  totalprice: number = 0;
 
   constructor(
     private route: ActivatedRoute,
@@ -32,23 +32,32 @@ export class SeatsComponent {
 
   ngOnInit(): void {
     this.showtimeId = Number(this.route.snapshot.paramMap.get('showtimeId'));
-    this.showtime = this.showtimeService.getShowtimes().find(s => s.id === this.showtimeId);
 
-    if (this.showtime) {
+    this.showtimeService.getShowtimes().subscribe(showtimes => {
+      this.showtime = showtimes.find(s => s.id === this.showtimeId);
+
+      if (!this.showtime) return;
+
       this.movieService.getMovieById(this.showtime.movieId).subscribe(data => {
-  this.movie = data;
-});
-      this.seats = this.showtimeService.getSeatsByHall(this.showtime.hallId, this.showtimeId);
-      this.ticketprice = this.showtimeService.getHallPrice(this.showtime.hallId);
-      const grouped : {[key:string]:any[]} = {};
-      this.seats.forEach(seat => {
-      if (!grouped[seat.row]) {
-        grouped[seat.row] = [];
-      }
-      grouped[seat.row].push(seat);
+        this.movie = data;
       });
-      this.seatRows = Object.values(grouped)
-    }
+
+      this.showtimeService.getSeatsByHall(this.showtime.hallId, this.showtimeId)
+        .subscribe(seats => {
+          this.seats = seats;
+
+          const grouped: { [key: string]: any[] } = {};
+          this.seats.forEach(seat => {
+            if (!grouped[seat.row]) grouped[seat.row] = [];
+            grouped[seat.row].push(seat);
+          });
+          this.seatRows = Object.values(grouped);
+        });
+
+      this.showtimeService.getHallPrice(this.showtime.hallId).subscribe(price => {
+        this.ticketprice = price;
+      });
+    });
   }
 
   toggleSeat(seatId: number): void {
@@ -57,6 +66,6 @@ export class SeatsComponent {
     } else {
       this.selectedSeats.push(seatId);
     }
-    this.totalprice = this.selectedSeats.length* this.ticketprice;
+    this.totalprice = this.selectedSeats.length * this.ticketprice;
   }
 }

@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
   constructor(private http: HttpClient) { }
 
   getallMovies(): Observable<Movie[]> {
-    return this.http.get<Movie[]>(`${this.apiUrl}`);
+    return this.http.get<Movie[]>(`${this.apiUrl}/all`);
   }
   getMovies(
     status: string = 'All',

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace MovieTicket.Core.Models
 {
@@ -14,6 +15,7 @@ namespace MovieTicket.Core.Models
         public int Rows { get; set; }
 
         public ICollection<Seat> Seats { get; set; } = new List<Seat>();
+        [JsonIgnore]
         public ICollection<Showtime> Showtimes { get; set; } = new List<Showtime>();
 
     }

@@ -17,6 +17,7 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(buil
 
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
 builder.Services.AddScoped<IMovieRepository, MovieRepository>();
+builder.Services.AddScoped<IShowtimeRepository,ShowtimeRepository>();
 builder.Services.AddScoped<IUnitofWork, UnitofWork>();
 
 builder.Services.AddCors(options =>
