@@ -32,26 +32,7 @@ export class ShowtimesComponent implements OnInit {
     private showtimeservice: ShowtimeService
   ) {}
 
-  // ngOnInit(): void {
-    
-  //   // this.movieservice.getMovies().subscribe(data => {
-  //   //   this.movies = data;
-  //   // });
 
-
-  //   // this.showtimeservice.getTheatres().subscribe(data => {
-  //   //   this.halls = data;
-  //   //   this.selectedHall = this.halls.length ? this.halls[0] : null;
-  //   //   this.tryLoadShowtimes();
-  //   // });
-
-  //   // this.showtimeservice.getDates().subscribe(data => {
-  //   //   this.dates = data;
-  //   //   this.selectedDate = this.dates.length ? this.dates[0] : '';
-  //   //   this.tryLoadShowtimes();
-  //   // });
-    
-  // }
 ngOnInit(): void {
   forkJoin({
     movies: this.movieservice.getallMovies(),

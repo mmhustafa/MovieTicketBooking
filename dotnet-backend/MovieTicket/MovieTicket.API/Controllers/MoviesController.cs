@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MovieTicket.Core.Interfaces;
 
@@ -20,6 +21,7 @@ namespace MovieTicket.API.Controllers
             var movies =  unitofwork.MovieRepository.GetAll();
             return Ok(movies);
         }
+        [Authorize]
         [HttpGet]
         public IActionResult GetMovies(
             [FromQuery] string? status,
