@@ -8,6 +8,11 @@ namespace MovieTicket.Core.Interfaces
     {
         IMovieRepository MovieRepository { get; }
         IShowtimeRepository ShowtimeRepository { get; }
+        IGenericRepository<Core.Models.Hall> HallRepository { get; }
+        IGenericRepository<Core.Models.Reservation> ReservationRepository { get; }
+        IGenericRepository<Core.Models.ReservedSeat> ReservedSeatRepository { get; }
+        IGenericRepository<Core.Models.Seat> SeatRepository { get; }
         int Complete();
+        void Save();
     }
 }

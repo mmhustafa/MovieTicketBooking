@@ -317,7 +317,6 @@ namespace MovieTicket.Infastructure.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("UserId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
@@ -477,8 +476,7 @@ namespace MovieTicket.Infastructure.Migrations
                     b.HasOne("MovieTicket.Core.Models.ApplicationUser", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.SetNull);
 
                     b.Navigation("Showtime");
 

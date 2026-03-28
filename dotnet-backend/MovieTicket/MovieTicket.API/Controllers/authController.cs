@@ -43,7 +43,7 @@ namespace MovieTicket.API.Controllers
             if (result.Succeeded)
             {
                 await userManager.AddToRoleAsync(user, "User");
-                return Ok("User registered with role 'User'.");
+                return Ok(new { message = "User registered successfully. Please login with your credentials." });
             }
 
             foreach (var error in result.Errors)
@@ -67,7 +67,7 @@ namespace MovieTicket.API.Controllers
             if (result.Succeeded)
             {
                 await userManager.AddToRoleAsync(user, "Admin");
-                return Ok("Admin registered with role 'Admin'.");
+                return Ok(new { message = "Admin registered successfully." });
             }
 
             foreach (var error in result.Errors)

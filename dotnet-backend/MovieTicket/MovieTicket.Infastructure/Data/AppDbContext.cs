@@ -20,5 +20,17 @@ namespace MovieTicket.Infastructure.Data
         public DbSet<Reservation> Reservations { get; set; }
         public DbSet<ReservedSeat> ReservedSeats { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            // Configure Reservation - UserId is required (authenticated users only)
+            modelBuilder.Entity<Reservation>()
+                .HasOne(r => r.User)
+                .WithMany()
+                .HasForeignKey(r => r.UserId)
+                .IsRequired(true)
+                .OnDelete(DeleteBehavior.Cascade);
+        }
     }
 }

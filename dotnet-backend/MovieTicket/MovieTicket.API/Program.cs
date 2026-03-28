@@ -45,6 +45,7 @@ builder.Services.AddAuthentication(options => {
 });
 builder.Services.AddScoped<IMovieRepository, MovieRepository>();
 builder.Services.AddScoped<IShowtimeRepository,ShowtimeRepository>();
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<IUnitofWork, UnitofWork>();
 
 builder.Services.AddCors(options =>

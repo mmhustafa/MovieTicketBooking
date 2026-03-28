@@ -1,0 +1,164 @@
+<div class="auth-container">
+  <div class="auth-card">
+    <div class="auth-header">
+      <h1>🎬 CinemaBook</h1>
+      <p>Welcome to Ticket Booking</p>
+    </div>
+
+    <!-- error and success messages -->
+    <div *ngIf="errorMessage" class="alert alert-danger">
+      <i class="fas fa-exclamation-circle"></i>
+      {{ errorMessage }}
+      <button class="close-icon" (click)="clearMessages()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <div *ngIf="successMessage" class="alert alert-success">
+      <i class="fas fa-check-circle"></i>
+      {{ successMessage }}
+      <button class="close-icon" (click)="clearMessages()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <!-- Initial Choice Screen -->
+    <div *ngIf="!showLoginForm && !showRegisterForm" class="choice-section">
+      <h2>Get Started</h2>
+      
+      <button class="auth-btn btn-login" (click)="showLogin()">
+        <i class="fas fa-sign-in-alt"></i>
+        <span>Login to Your Account</span>
+      </button>
+
+      <button class="auth-btn btn-secondary" (click)="showRegister()">
+        <i class="fas fa-user-plus"></i>
+        <span>Create New Account</span>
+      </button>
+
+      <button class="auth-btn btn-back" (click)="goBack()">
+        <i class="fas fa-arrow-left"></i>
+        <span>Go Back</span>
+      </button>
+    </div>
+
+    <!-- Login Form -->
+    <div *ngIf="showLoginForm" class="form-section">
+      <h2>Login to Your Account</h2>
+      
+      <form (ngSubmit)="loginUser()">
+        <div class="form-group">
+          <label for="loginUsername">Username</label>
+          <input
+            type="text"
+            id="loginUsername"
+            [(ngModel)]="loginUsername"
+            name="loginUsername"
+            placeholder="Enter your username"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="loginPassword">Password</label>
+          <input
+            type="password"
+            id="loginPassword"
+            [(ngModel)]="loginPassword"
+            name="loginPassword"
+            placeholder="Enter your password"
+            required
+          />
+        </div>
+
+        <button type="submit" class="auth-btn btn-login" [disabled]="isLoading">
+          <span *ngIf="!isLoading">Login</span>
+          <span *ngIf="isLoading">
+            <i class="fas fa-spinner fa-spin"></i> Logging in...
+          </span>
+        </button>
+
+        <button
+          type="button"
+          class="auth-btn btn-back"
+          (click)="goBackToChoice()"
+          [disabled]="isLoading"
+        >
+          Back
+        </button>
+      </form>
+    </div>
+
+    <!-- Register Form -->
+    <div *ngIf="showRegisterForm" class="form-section">
+      <h2>Create New Account</h2>
+      <p class="info-text">Join CinemaBook to book your tickets</p>
+
+      <form (ngSubmit)="registerUser()">
+        <div class="form-group">
+          <label for="registerUsername">Username</label>
+          <input
+            type="text"
+            id="registerUsername"
+            [(ngModel)]="registerUsername"
+            name="registerUsername"
+            placeholder="Choose a username"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="registerEmail">Email Address</label>
+          <input
+            type="email"
+            id="registerEmail"
+            [(ngModel)]="registerEmail"
+            name="registerEmail"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="registerPassword">Password</label>
+          <input
+            type="password"
+            id="registerPassword"
+            [(ngModel)]="registerPassword"
+            name="registerPassword"
+            placeholder="Enter password (min 6 characters)"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="registerConfirmPassword">Confirm Password</label>
+          <input
+            type="password"
+            id="registerConfirmPassword"
+            [(ngModel)]="registerConfirmPassword"
+            name="registerConfirmPassword"
+            placeholder="Confirm your password"
+            required
+          />
+        </div>
+
+        <button type="submit" class="auth-btn btn-secondary" [disabled]="isLoading">
+          <span *ngIf="!isLoading">Create Account</span>
+          <span *ngIf="isLoading">
+            <i class="fas fa-spinner fa-spin"></i> Creating...
+          </span>
+        </button>
+
+        <button
+          type="button"
+          class="auth-btn btn-back"
+          (click)="goBackToChoice()"
+          [disabled]="isLoading"
+        >
+          Back
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

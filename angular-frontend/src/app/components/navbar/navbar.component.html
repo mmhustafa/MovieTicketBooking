@@ -15,12 +15,36 @@
       <li class="nav-item"><a class="nav-link" routerLink="/movies">Movies</a></li>
       <li class="nav-item"><a class="nav-link" routerLink="/showtimes">Showtimes</a></li>
       <li class="nav-item"><a class="nav-link" routerLink="/tickets">Tickets</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="/reservation">Reservations</a></li>
       <!-- <li class="nav-item"><a class="nav-link" (click)="scrollToFooter()">Contact</a></li> -->
     </ul>
 
-    <div class="d-flex align-items-center">
-      <button class="btn btn-outline-purple me-2 rounded-pill">Signup</button>
-      <button class="btn btn-purple rounded-pill">Login</button>
+    <div class="d-flex align-items-center gap-3">
+      <!-- User Status Badge -->
+      <div *ngIf="isAuthenticated" class="user-status">
+        <span *ngIf="currentUser" class="badge bg-success">
+          <i class="fas fa-user-circle"></i> {{ currentUser.name || 'User' }}
+        </span>
+      </div>
+
+      <!-- Auth Buttons -->
+      <div *ngIf="!isAuthenticated" class="auth-buttons">
+        <button class="btn btn-outline-purple me-2 rounded-pill btn-sm" routerLink="/auth">
+          Signup
+        </button>
+        <button class="btn btn-purple rounded-pill btn-sm" routerLink="/auth">
+          Login
+        </button>
+      </div>
+
+      <!-- Logout Button -->
+      <button 
+        *ngIf="isAuthenticated" 
+        class="btn btn-outline-danger rounded-pill btn-sm"
+        (click)="logout()"
+      >
+        <i class="fas fa-sign-out-alt"></i> Logout
+      </button>
     </div>
   </div>
 </nav>

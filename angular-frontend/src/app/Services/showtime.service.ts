@@ -41,8 +41,9 @@
     getSeatsByHall(hallId: number, showtimeId: number): Observable<Seat[]> {
       return this.http.get<Seat[]>(`${this.apiUrl}/${showtimeId}/seats?hallId=${hallId}`);
     }
+
     getHallPrice(hallId: number): Observable<number> {
-      return this.http.get<number>(`https://localhost:5001/api/halls/${hallId}/price`);
+      return this.http.get<number>(`http://localhost:5158/api/reservations/halls/${hallId}/price`);
     }
 
   }

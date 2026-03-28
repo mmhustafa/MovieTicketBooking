@@ -1,0 +1,74 @@
+.bg-deep-purple {
+  background-color: #6f42c1;
+}
+
+.btn-purple {
+  background-color: #6f42c1;
+  border-color: #6f42c1;
+  color: white;
+}
+
+.btn-purple:hover {
+  background-color: #5a32a3;
+  border-color: #5a32a3;
+}
+
+.btn-outline-purple {
+  color: #6f42c1;
+  border-color: #6f42c1;
+}
+
+.btn-outline-purple:hover {
+  background-color: #6f42c1;
+  border-color: #6f42c1;
+  color: white;
+}
+
+.card {
+  border: none;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.form-control {
+  border-radius: 5px;
+  border: 1px solid #d3d3d3;
+  padding: 0.75rem;
+  font-size: 1rem;
+}
+
+.form-control:focus {
+  border-color: #6f42c1;
+  box-shadow: 0 0 0 0.2rem rgba(111, 66, 193, 0.25);
+}
+
+.btn-lg {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.text-danger {
+  color: #dc3545;
+}
+
+.alert {
+  border-radius: 5px;
+  border-left: 4px solid #6f42c1;
+}
+
+.alert-info {
+  background-color: #e8e8f5;
+  border-left-color: #6f42c1;
+  color: #333;
+}
+
+.alert-warning {
+  background-color: #fff3cd;
+  border-left-color: #ffc107;
+}

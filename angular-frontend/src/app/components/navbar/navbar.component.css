@@ -65,3 +65,66 @@
   background-color: #8D51CE;
   color: #FFFFFF;
 }
+
+/* User Status Badge */
+.user-status {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.user-status .badge {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.user-status .badge i {
+  font-size: 0.95rem;
+}
+
+/* Auth Buttons */
+.auth-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-sm {
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+}
+
+.btn-outline-danger {
+  border-color: #dc3545;
+  color: #dc3545;
+}
+
+.btn-outline-danger:hover {
+  background-color: #dc3545;
+  color: white;
+  border-color: #dc3545;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .d-flex.gap-3 {
+    flex-direction: column;
+    gap: 0.5rem !important;
+  }
+
+  .user-status {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .auth-buttons {
+    width: 100%;
+  }
+
+  .auth-buttons .btn {
+    flex: 1;
+  }
+}
