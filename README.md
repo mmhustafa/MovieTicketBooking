@@ -8,18 +8,12 @@ A full-stack application for browsing movies, selecting seats, and booking ticke
 
 ## 🚀 Features  
 
-### 🔵 User Features  
 - Browse movies & showtimes  
 - View movie details  
 - Select seats in a seat map  
 - Booking summary with total price  
 - Secure login & registration (JWT authentication)  
 - View past bookings  
-
-### 🟢 Admin Features  
-- Add, update, and delete movies  
-- Manage showtimes  
-- View all bookings  
 
 ---
 
